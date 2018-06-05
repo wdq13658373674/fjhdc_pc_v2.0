@@ -3,13 +3,14 @@
     <div class="top-box">
       <div class="top clearfix">
         <!--登陆前-->
-        <div class="before pull-right hide">
+        <div class="before pull-right">
           <a href="#">登陆</a>
           <a href="#">注册</a>
+          <a class="about" href="#">关于我们</a>
         </div>
 
         <!--登陆后-->
-        <div class="after pull-right ">
+        <div class="after pull-right hide">
           <div class="menu-box">
             <span class="icon"></span>
             <ul class="menu-list">
@@ -26,17 +27,17 @@
     </div>
     <div class="nav clearfix">
       <a href="#" class="pull-left">
-        <img src="@/assets/images/public/logo2.png" alt="">
-        <img class="ml60" src="@/assets/images/public/logo2_name.png" alt="">
+        <img src="@/assets/images/public/logo.png" alt="">
       </a>
 
       <div class="menu pull-right">
         <a class="item active" href="#">首页</a>
-        <a class="item" href="#">管理项目</a>
-        <a class="item" href="#">关于我们</a>
+        <a class="item" href="#">定制购房</a>
+        <a class="item" href="#">房计划物业</a>
+        <a class="item" href="#">团转到家</a>
+        <a class="item" href="#">房计划装修</a>
       </div>
     </div>
-
   </header>
 </template>
 

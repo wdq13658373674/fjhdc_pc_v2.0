@@ -1,17 +1,17 @@
 <template>
   <div>
-    <div class="index-title1">
+    <div class="tz-index-title">
       <div class="bg">
         <span>专注房地产开发管理</span>
         <span class="ml30">为客户创造最大利益</span>
       </div>
     </div>
-    <div class="index-teams">
+    <div class="tz-index-teams">
       <ul class="teams-list clearfix">
         <li class="item">
           <a class="link" href="#">
             <div class="img"><img src="@/assets/images/img/a_con101.png" alt=""></div>
-            <div class="tit">专业科技团队</div>
+            <div class="tit">专业管理团队</div>
             <div class="en">MANAGEMENT TEAM</div>
           </a>
         </li>
@@ -38,124 +38,76 @@
         </li>
       </ul>
     </div>
-    <div class="index-projects min-width">
 
-      <div class="index-title2">
-        <div class="content">
-          <h1 class="con f20">管理项目</h1>
-          <h2 class="f10">MANAGE PROJECT</h2>
-        </div>
+    <!--项目-->
+    <div class="tz-pro-title">
+      <span class="span1">管理项目</span>
+      <span class="span2">MANAGEMENT ITEM</span>
+      <a class="link" href="#">+ MORE</a>
+    </div>
+    <div class="tz-index-project">
+      <div class="project-list clearfix">
+        <a class="item" href="#">
+          <div class="img-box" style="background-image: url('@/assets/images/test/house.jpg')"></div>
+          <div class="con-box">
+            <p class="desc">房计划·诚远御府</p>
+          </div>
+        </a>
+        <a class="item" href="#">
+          <div class="img-box" style="background-image: url('@/assets/images/test/house.jpg')"></div>
+          <div class="con-box">
+            <p class="desc">房计划</p>
+          </div>
+        </a>
+        <a class="item" href="#">
+          <div class="img-box" style="background-image: url('@/assets/images/test/house.jpg')"></div>
+          <div class="con-box">
+            <p class="desc">房计划房计划房计划房计划房计划·诚远御府</p>
+          </div>
+        </a>
       </div>
 
-      <div class="link-more clearfix  ">
-        <a class="pull-right" href="#">查看更多</a>
+    </div>
+
+    <!--企业动态-->
+    <div class="tz-pro-title">
+      <span class="span1">企业动态</span>
+      <span class="span2">BUSINESS MOVEMENT</span>
+      <a class="link" href="#">+ MORE</a>
+    </div>
+    <div class="tz-index-news clearfix">
+      <div class="news-list pull-left">
+        <a class="item" href="#">
+          <span class="date">2018.05.24 </span>
+          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
+        </a>
+        <a class="item" href="#">
+          <span class="date">2018.05.24 </span>
+          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
+        </a>
+        <a class="item" href="#">
+          <span class="date">2018.05.24 </span>
+          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
+        </a>
+        <a class="item" href="#">
+          <span class="date">2018.05.24 </span>
+          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
+        </a>
+        <a class="item" href="#">
+          <span class="date">2018.05.24 </span>
+          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
+        </a>
       </div>
 
-      <div class="project-list">
-        <div class="project">
-          <a href="#" class="link clearfix">
-            <div class="img pull-left"><img src="@/assets/images/test/house.jpg" alt=""></div>
-
-            <div class="content pull-left">
-              <div class="title">邻水县西部新城A-01地块</div>
-              <div class="border-line mt10"></div>
-
-              <ul class="msg-list clearfix">
-                <li class="item">
-                  <div class="tit"><i class="icon icon-caret-right"></i>地块位置</div>
-                  <div class="con">邻水县西部新城三完小旁边</div>
-                </li>
-                <li class="item">
-                  <div class="tit"><i class="icon icon-caret-right"></i>地块编号</div>
-                  <div class="con">A-05</div>
-                </li>
-                <li class="item">
-                  <div class="tit"><i class="icon icon-caret-right"></i>地块面积</div>
-                  <div class="con">100000 m<sup>2</sup></div>
-                </li>
-                <li class="item">
-                  <div class="tit"><i class="icon icon-caret-right"></i>容积率</div>
-                  <div class="con">2.0</div>
-                </li>
-                <li class="item">
-                  <div class="tit"><i class="icon icon-caret-right"></i>绿化率</div>
-                  <div class="con">45%</div>
-                </li>
-                <li class="item">
-                  <div class="tit"><i class="icon icon-caret-right"></i>建筑密度</div>
-                  <div class="con">55%</div>
-                </li>
-
-              </ul>
-            </div>
-          </a>
+      <div class="about-box pull-right">
+        <div class="title">房计划首家物业二手房专营店诞生</div>
+        <div class="con">作为万科作为万科物业旗下房屋资产服务机构作为万科物业旗下房屋资产服务机构作为万科物业旗下房屋资产服务机构作为万科物业旗下房屋资产服务机构作为万科物业旗下房屋资产服务机构物业旗下房屋资产服务机构“万科租售中心”，5月28日将在全国百城租售门店同步更名为“朴邻·万科物业二手房专营店”（以下简称为“朴邻”）。标志着国内物业行业的首家二手房营店诞生，新品牌朴邻将集中全力深化接管小区的二手房业务，持续为业主实现不动产的保值增值，让客户感受经纪服务的信任和温度。</div>
+        <div>
+          <a class="link" href="#">查看详情</a>
         </div>
-
-        <div class="project">
-          <a href="#" class="link clearfix">
-            <div class="img pull-left"><img src="@/assets/images/test/house.jpg" alt=""></div>
-
-            <div class="content pull-left">
-              <div class="title">邻水县西部新城A-01地块</div>
-              <div class="border-line mt10"></div>
-
-              <ul class="msg-list clearfix">
-                <li class="item">
-                  <div class="tit">地块位置</div>
-                  <div class="con">邻水县西部新城三完小旁边</div>
-                </li>
-                <li class="item">
-                  <div class="tit">地块编号</div>
-                  <div class="con">A-05</div>
-                </li>
-                <li class="item">
-                  <div class="tit">地块面积</div>
-                  <div class="con">100000 m<sup>2</sup></div>
-                </li>
-                <li class="item">
-                  <div class="tit">容积率</div>
-                  <div class="con">2.0</div>
-                </li>
-                <li class="item">
-                  <div class="tit">绿化率</div>
-                  <div class="con">45%</div>
-                </li>
-                <li class="item">
-                  <div class="tit">建筑密度</div>
-                  <div class="con">55%</div>
-                </li>
-
-              </ul>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="project-more">
-        <a href="#">MANAGE PROJECT</a>
       </div>
     </div>
-    <div class="index-partners hide">
-      <div class="title">
-        <div class="f20">合作伙伴</div>
-        <div class="f10 yellow-light">PARTENERS</div>
-      </div>
 
-      <div class="partner-list clearfix">
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-        <a class="item" href="#"></a>
-      </div>
-    </div>
   </div>
 </template>
 

@@ -1,4 +1,4 @@
-@import "core/import","core/reset";
+@import "core/import","./core/reset";
 
 .min-width{
   min-width:1200px !important;
@@ -68,12 +68,13 @@
 .mb60{margin-bottom:60px !important;}
 
 
-.header{background: #f9f5ef;
+.header{
+  background: #2f220f;
+  overflow: hidden;
 
   .top{
     @extend %main-width;
-    height:56px;
-    line-height:56px;
+    margin-top:40px;
 
     .before>{
       a{
@@ -82,6 +83,20 @@
 
         &:hover{
           color:$yellow-light;
+        }
+      }
+
+      .about{
+        @extend %inline-block;
+        @include wh(auto,30px,30px);
+        @include border-radius(15px);
+        border:1px solid $yellow-light4;
+        text-align: center;
+        padding:0 20px;
+
+        &:hover{
+          background:$yellow-light4;
+          color:#fff;
         }
       }
     }
@@ -157,22 +172,21 @@
 
   .top-box{
     @extend .min-width;
-    background: #2f220f;
   }
+
   .nav{
     @extend %main-width;
-    height:105px;
-    line-height:105px;
-
+    margin-bottom:74px;
 
     .menu{
+      margin-top:58px;
       .item{
-        color:$black;
+        color:#fff;
         margin-left:68px;
         font-size:16px;
 
         &.active{
-          color:$yellow-light;
+          color:$yellow-light3;
         }
 
         &:hover{
@@ -184,19 +198,26 @@
 }
 
 .footer{
-  background:url("/images/public/bottom.jpg") repeat;
+  background: $yellow-light2;
+  overflow: hidden;
+  margin-top:97px;
+  height:292px;
 
   .container{
     @extend %main-width;
-    height:105px;
-    line-height:105px;
-
-    .logo{
-      display: block;
+    .p1{
+      font-size:20px;
+      margin-top:80px;
     }
 
-    .txt{
+    .p2{
+      font-size:30px;
       color:$yellow-light;
+    }
+
+    .p3{
+      @include wh(auto,68px,68px);
+      font-size:50px;
     }
   }
 }

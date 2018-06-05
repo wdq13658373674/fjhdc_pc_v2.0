@@ -4,31 +4,32 @@
 
 .index-head{
   @include wh(100%,702px);
-  //background:url("./assets/images/img/a_top101.jpg") top center no-repeat,url("./assets/images/img/a_top102.jpg") bottom center no-repeat;
+  background:url("/images/img/a_top101.jpg") top center no-repeat,url("/images/img/a_top102.jpg") bottom center no-repeat;
 
   .header{
     background:none;
-
-    .menu{
-      .item{
-        color:#fff;
-
-        &.active{
-          color:$yellow-light;
-        }
-
-        &:hover{
-          @extend .active;
-        }
-      }
-    }
   }
 }
 
-.index-teams{
+.tz-index-title{
+  @include wh(auto,35px,35px);
+  margin-top: 108px;
+  font-size: 26px;
+  color:$yellow;
+  text-align: center;
+
+  .bg{
+    width:850px;
+    margin:0 auto;
+    background: url("/images/icons/t_r.png") left center no-repeat,url("/images/icons/t_l.png") right center no-repeat;
+  }
+}
+
+.tz-index-teams{
   @extend %main-width;
   overflow: hidden;
   margin-top:92px;
+  margin-bottom:116px;
 
   .teams-list{
     width:1500px;
@@ -49,192 +50,149 @@
 
     .tit{
       font-size: 20px;
-      color:$black;
+      color:#2f220f;
       margin-top:34px;
     }
 
     .en{
       font-size:12px;
-      color: #e1dad0;
+      color: $grayLight;
       font-weight: bold;
       margin-top:8px;
     }
   }
 }
 
-.index-title1{
-  @include wh(auto,35px,35px);
-  margin-top: 108px;
-  font-size: 26px;
-  color:$yellow;
-  text-align: center;
+.tz-pro-title{
+  @extend %main-width;
+  height:55px;
+  line-height:55px;
+  border-bottom:1px solid $grayLight;
 
-  .bg{
-    width:850px;
-    margin:0 auto;
-    //background: url("./assets/images/icons/t_r.png") left center no-repeat,url("./assets/images/icons/t_l.png") right center no-repeat;
-  }
-}
-
-.index-title2{
-  @include wh(204px,204px);
-  @include border-radius(50%);
-  background: $yellow-light2;
-  overflow: hidden;
-  position: absolute;
-  top:-75px;
-  left:0;
-  right:0;
-  margin:0 auto;
-
-
-  .content{
-    @include wh(144px,144px);
-    @include border-radius(50%);
-    background: $yellow-light;
-    color:#fff;
-    margin:30px auto;
-    text-align: center;
-    overflow: hidden;
+  .span1{
+    font-size:20px;
   }
 
-  .con{
-    margin-top:49px;
+  .span2{
+    font-size:16px;
+    color:$yellow-light;
+    margin-left:20px;
   }
-}
 
-.index-projects{
-  position: relative;
-  background: $yellow-light2;
-  margin-top:153px;
-  padding-top:100px;
-  padding-bottom:43px;
+  .link{
+    float:right;
+    color:$yellow;
+    font-size:16px;
 
-  .link-more{
-    @extend %main-width;
-    height:50px;
-    line-height:50px;
-
-    &>a{
-      color:$yellow;
-
-      &:hover{
-        color:$yellow-light;
-      }
+    &:hover{
+      color:$yellow-light4;
     }
   }
+}
+
+.tz-index-project{
+  @extend %main-width;
+  margin-top:55px;
+  margin-bottom:98px;
 
   .project-list{
-    @extend %main-width;
+    width:1220px;
+  }
 
-    .project{
-      margin-bottom:35px;
-      .link{
-        display:block;
-        padding:33px;
-        background: #fff;
-        border: solid 1px #fff;
-        @include transition();
-        @include border-radius(17px);
+  .item{
+    float:left;
+    margin-right:18px;
+    @include wh(388px,auto);
 
-        &:hover{
-          @include box-shadow(0 12px 11px 2px rgba(136, 104, 53, 0.22));
-          border: solid 1px $yellow-light;
-        }
-      }
-
-      .img{
-        @include wh(420px,290px);
-        @include border-radius(11px);
-        overflow: hidden;
-        border: solid 1px $yellow-light;
-        text-align: center;
-
-        &>img{
-          @include wh(auto,100%);
-        }
-      }
-
-      .content{
-        @include wh(644px,290px);
-        margin-left:42px;
-        overflow: hidden;
-
-        .title{
-          @include wh(100%,30px,30px);
-          margin-top:28px;
-          font-size:20px;
-          color:$black;
-        }
-
-        .msg-list{
-          .item{
-            @include wh(214px,auto);
-            float: left;
-            margin-top:35px;
-            font-size:16px;
-            overflow: hidden;
-          }
-
-          .icon {
-            font-size: 10px;
-            color: $yellow;
-            margin-right: 6px;
-          }
-
-          .tit{
-            color:$black;
-            @include wh(100%,24px,24px);
-          }
-
-          .con{
-            color:$yellow;
-            @include wh(100%,24px,24px);
-            margin-top:10px;
-            @include ellipsis();
-            padding-left:10px;
-          }
-        }
+    &:hover{
+      .desc{
+        border-color:$yellow-light4;
+        @include border-radius(16.5px);
       }
     }
   }
 
-  .project-more{
-    @include wh(auto,20px);
+  .img-box{
+    @include wh(100%,258px);
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .con-box{
     text-align: center;
-    a{
-      font-size:10px;
-      color:#dfc497;
+    .desc{
+      @extend %inline-block;
+      @include wh(auto,33px,33px);
+      min-width:182px;
+      max-width: 80%;
+      padding:0 30px;
+      text-align: center;
+      overflow: hidden;
+      font-size:16px;
+      @extend %ellipsis-basic;
+      margin:14px 0;
+      border:1px solid #fff;
     }
   }
 }
 
-.index-partners{
+.tz-index-news{
   @extend %main-width;
-  margin:53px auto 93px;
-  overflow: hidden;
 
-  .title{
-    color:$black;
-    text-align: center;
-    margin-top:30px;
-  }
-
-  .partner-list{
-    width:1250px;
-    margin-bottom:58px;
+  .news-list{
+    margin-top:62px;
+    @include wh(513px,300px);
+    overflow: hidden;
+    border-right:1px solid $grayLight;
 
     .item{
-      float: left;
-      display:block;
-      @include wh(178px,80px);
-      border:1px solid $yellow-light;
-      margin-top:30px;
-      margin-right:26.4px;
+      font-size: 16px;
+      @include wh(413px,25px);
+      margin-bottom:44px;
+      float:left;
+      @extend %ellipsis-basic;
+
+      &:hover{
+        text-decoration: underline;
+      }
+
+      .date{
+        color: #886835;
+        margin-right:18px;
+      }
     }
   }
-}
 
-.trangle-l{
-  @include triangle(right, 1px, #000 );
+  .about-box{
+    @include wh(590px,300px);
+    overflow: hidden;
+    margin-top:62px;
+
+    .title{
+      @include wh(auto,35px);
+      font-size:26px;
+    }
+
+    .con{
+      margin-top:42px;
+      line-height:1.81;
+      height:165px;
+      overflow: hidden;
+      font-size:16px;
+    }
+
+    .link{
+      float:left;
+      color:$yellow;
+      margin-top:38px;
+      height:20px;
+
+      &:hover{
+        color:$yellow-light4;
+      }
+    }
+  }
+
 }

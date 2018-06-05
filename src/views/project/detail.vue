@@ -1,0 +1,287 @@
+<template>
+  <div>
+    <div id="project-detail">
+      <div class="crumbs mt40">
+        <a href="#">房计划地产首页 </a> >
+        <a href="#">管理项目 </a> >
+        <span>邻水县西部新城A-01地块 </span>
+      </div>
+
+      <div class="content clearfix">
+        <div class="flash pull-left">
+          <!-- Swiper start -->
+          <div id="gallery" class="swiper-container gallery-top" style="width:100%;height:450px;background:#fff;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+              <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;"></div>
+              <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+              <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+              <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+            </div>
+          </div>
+
+          <div class="thumbs-box">
+            <div id="thumbs" class="swiper-container gallery-thumbs" style="width:628px;height:90px;background:#fff;">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;"></div>
+                <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;"></div>
+                <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;"></div>
+                <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;"></div>
+                <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;"></div>
+              </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-prev1 gallery-btn"> < </div>
+            <div class="swiper-button-next1 gallery-btn"> > </div>
+            <!-- Swiper end -->
+          </div>
+        </div>
+
+        <div class="msg pull-left">
+          <h1 class="title f20">邻水县西部新城A-01地块</h1>
+
+          <div class="horizontal-line mt50"></div>
+          <ul class="msg-list">
+            <li class="item">
+              <span class="tit">地块位置</span>
+              <div class="con">邻水县西部新城三完小旁边</div>
+            </li>
+            <li class="item">
+              <span class="tit">地块编号</span>
+              <div class="con">A-05</div>
+            </li>
+            <li class="item">
+              <span class="tit">地块面积</span>
+              <div class="con">100000 <span class="yellow-light">m<sup>2</sup></span></div>
+            </li>
+            <li class="item">
+              <span class="tit">建筑面积</span>
+              <div class="con">100000 <span class="yellow-light">m<sup>2</sup></span></div>
+            </li>
+            <li class="item">
+              <span class="tit">容积率</span>
+              <div class="con">2.0</div>
+            </li>
+            <li class="item">
+              <span class="tit">绿化率</span>
+              <div class="con">45%</div>
+            </li>
+            <li class="item">
+              <span class="tit">建筑密度</span>
+              <div class="con">55%</div>
+            </li>
+          </ul>
+          <div class="horizontal-line"></div>
+
+          <a href="#" class="btn">意向收集</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="project-tab" class="mt60">
+      <div class="item">项目介绍</div>
+      <div class="item">周边配套</div>
+      <div class="item active">建设进度</div>
+    </div>
+
+    <div class="tab-box">
+      <div id="project-box1" class="content mb60">
+        <img src="@/assets/images/test/house.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="tab-box">
+      <div id="project-box2" class="content mb60 clearfix">
+        <div class="left-box pull-left">
+          <h1>项目区位图</h1>
+
+          <div class="img-box">
+            <div style="position: relative;">
+              <img class="img" src="@/assets/images/test/house.jpg" alt=""/><!--大图路径-->
+
+              <!--hover效果-->
+              <a id="map" href="javascript:void(0);" class="dark-mask-box">
+                <img class="vr-img zoom-img" layer-src="@/assets/images/test/house.jpg" src="@/assets/images/icons/zoom_add.png" alt=""/>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="right-box pull-right">
+          <h1>位置及周边</h1>
+          <h2>交通</h2>
+          <p>近临邻水西出口，西部新城1号公路、2号公路、3号公路、入城大道环绕四周，真正做到了项目与老城区、 广邻高速的无缝衔接。</p>
+          <h2>购物</h2>
+          <p>新世纪百货、南洋百货、五星级农贸市场、红星美凯龙、苏宁易购等商业配套齐全，满足您的生活购物需求。</p>
+          <h2>教育</h2>
+          <p>机关幼儿园、鼎屏小学、一完小分校、二完小、邻水二中等邻水优质教育资源云集，让孩子享受从幼儿园到中学全龄化优质教育体系。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-box  active">
+      <div id="project-box3" class="content mb60">
+        <!--列表 start-->
+        <ul id="proList" class="pro-list clearfix">
+          <li class="item">
+            <div class="date pull-left">
+              <p class="year">2016</p>
+
+              <p class="mon">09-05</p>
+            </div>
+            <div class="tit">
+              土石方开标
+            </div>
+          </li>
+        </ul>
+        <!--列表 end-->
+
+        <!--详情 start-->
+        <div class="pro-detail">
+          <div class="back"><a href="javascript:void(0)" onclick="$(this).parents('#project-box3').removeClass('active');">返回>></a></div>
+          <div class="top mt20 clearfix">
+            <div class="top-schedule active">
+              <div class="descri pull-left">
+                <div class="title">A-5-1户型</div>
+
+                <div class="dsc-item">
+                  <span class="tit">户型结构</span>
+                  <span class="con">三室两厅两卫</span>
+                </div>
+                <div class="dsc-item">
+                  <span class="tit">建筑面积</span>
+                  <span class="con">约118 <span class="gray">m<sup>2</sup></span></span>
+                </div>
+                <div class="dsc-item">
+                  <span class="tit">户型描述</span>
+                  <span class="con">约82平米的套二，大小适中，明厨明卫，动静分离。入户花园面积较大，作为入户的过渡空间，较好地保证了室内的私密性</span>
+                </div>
+              </div>
+              <div class="flash pull-right">
+                <!-- Swiper start -->
+                <div id="gallery0" class="swiper-container gallery-top" style="width:100%;height:386px;border: 1px solid #cbbfaa;background:#fff;">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                  </div>
+                </div>
+                <div class="thumbs-box">
+                  <div id="thumbs0" class="swiper-container gallery-thumbs mt10" style="width:680px;height:115px;background:#fff;">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
+                        <p class="caption">户型图1</p>
+                      </div>
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;">
+                        <p class="caption">户型图2</p>
+                      </div>
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
+                        <p class="caption">户型图3</p>
+                      </div>
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
+                        <p class="caption">户型图4</p>
+                      </div>
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
+                        <p class="caption">户型图5</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-prev2 gallery-btn"> < </div>
+                  <div class="swiper-button-next2 gallery-btn"> > </div>
+                  <!-- Swiper end -->
+                </div>
+              </div>
+            </div>
+            <div class="top-schedule">
+              <div class="descri pull-left">
+                <div class="title">A-5-1户型</div>
+
+                <div class="dsc-item">
+                  <span class="tit">户型结构</span>
+                  <span class="con">三室两厅两卫</span>
+                </div>
+                <div class="dsc-item">
+                  <span class="tit">建筑面积</span>
+                  <span class="con">约118 <span class="gray">m<sup>2</sup></span></span>
+                </div>
+                <div class="dsc-item">
+                  <span class="tit">户型描述</span>
+                  <span class="con">约82平米的套二，大小适中，明厨明卫，动静分离。入户花园面积较大，作为入户的过渡空间，较好地保证了室内的私密性</span>
+                </div>
+              </div>
+              <div class="flash pull-right">
+                <!-- Swiper start -->
+                <div id="gallery1" class="swiper-container gallery-top" style="width:100%;height:386px;border: 1px solid #cbbfaa;background:#fff;">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
+                  </div>
+                </div>
+                <div class="thumbs-box">
+                  <div id="thumbs1" class="swiper-container gallery-thumbs mt10" style="width:680px;height:115px;background:#fff;">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
+                        <p class="caption">户型图1</p>
+                      </div>
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;">
+                        <p class="caption">户型图2</p>
+                      </div>
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
+                        <p class="caption">户型图3</p>
+                      </div>
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
+                        <p class="caption">户型图4</p>
+                      </div>
+                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
+                        <p class="caption">户型图5</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add Arrows -->
+                  <div class="swiper-button-prev2 gallery-btn"> < </div>
+                  <div class="swiper-button-next2 gallery-btn"> > </div>
+                  <!-- Swiper end -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom mt30">
+            <div class="house-msg-list clearfix">
+              <label class="check-label">
+                <input class="check-input" type="radio" name="type" checked>
+                <div class="msg-item">二室两厅两卫</div>
+              </label>
+              <label class="check-label">
+                <input class="check-input" type="radio" name="type">
+                <div class="msg-item">二室两厅两卫</div>
+              </label>
+              <label class="check-label">
+                <input class="check-input" type="radio" name="type">
+                <div class="msg-item">二室两厅两卫</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!--详情 end-->
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+    export default {
+        name: "index"
+    }
+</script>
+
+<style scoped>
+
+</style>

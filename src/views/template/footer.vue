@@ -1,0 +1,17 @@
+<template>
+  <footer class="footer min-width">
+    <div class="container clearfix">
+      <a href="#" class="logo pull-left">
+        <img height="23px" src="@/assets/images/public/logo.png" alt="">
+        <img class="ml30" height="15px" src="@/assets/images/public/logo_name.png" alt="">
+      </a>
+      <div class="txt pull-right">© 2015 重庆怡瑞房地产营销顾问有限公司 沪ICP备16003014号</div>
+    </div>
+  </footer>
+</template>
+
+<script>
+    export default {
+        name: "footer"
+    }
+</script>

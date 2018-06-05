@@ -1,6 +1,6 @@
 # fjhdc_pc_v2.0
 
-> A Vue.js project
+> A Vue.js fjhdc_pc_v2.0
 
 ## Build Setup
 

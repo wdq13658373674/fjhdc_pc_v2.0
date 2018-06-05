@@ -139,6 +139,7 @@
     }
 </script>
 
-<style lang="scss">
-  @import "~@/assets/scss/index";
+<style lang="scss" >
+  $host:'../../assets/';
+  @import "../../assets/scss/index";
 </style>

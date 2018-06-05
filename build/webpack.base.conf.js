@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -37,8 +38,18 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback:"style-loader",
+          use:"css-loader"
+        })
+      },
+      {
         test: /\.scss$/,
-        loaders: ["style","css","scss"]
+        use: ExtractTextPlugin.extract({
+          fallback:"style-loader",
+          use:["sass-loader","css-loader"]
+        })
       },
       {
         test: /\.js$/,

@@ -4,7 +4,7 @@
 
 .index-head{
   @include wh(100%,702px);
-  background:url("/images/img/a_top101.jpg") top center no-repeat,url("/images/img/a_top102.jpg") bottom center no-repeat;
+  background:url($host+"images/img/a_top101.jpg") top center no-repeat,url($host+"images/img/a_top102.jpg") bottom center no-repeat;
 
   .header{
     background:none;
@@ -21,7 +21,7 @@
   .bg{
     width:850px;
     margin:0 auto;
-    background: url("/images/icons/t_r.png") left center no-repeat,url("/images/icons/t_l.png") right center no-repeat;
+    background: url($host+ "images/icons/t_r.png") left center no-repeat,url($host+"images/icons/t_l.png") right center no-repeat;
   }
 }
 

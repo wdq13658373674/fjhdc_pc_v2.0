@@ -1,0 +1,60 @@
+@import "core/import";
+
+.tz-user-menu{
+  @include wh(250px,970px);
+  overflow: hidden;
+
+  .menu-list{
+    margin-top:86px;
+    .item{
+      .link{
+        display:block;
+        @include wh(auto,60px,60px);
+        color:#fff;
+        padding-left:99px;
+        background-repeat: no-repeat;
+        background-position:57px center;
+
+        &.icon1{
+          background-image: url($host+"images/icons/d_menu101.png");
+          background-size: 20px 20px;
+        }
+        &.icon2{
+          background-image: url($host+"images/icons/d_menu102.png");
+          background-size: 27px 20px;
+        }
+        &.icon3{
+          background-image: url($host+"images/icons/d_menu103.png");
+          background-size: 23px 23px;
+        }
+        &.icon4{
+          background-image: url($host+"images/icons/d_menu104.png");
+          background-size: 23px 23px;
+        }
+
+        &.active{
+          background-color: #d1a35a;
+
+          &.icon1{
+            background-image: url($host+"images/icons/d_menu101_h.png");
+            background-size: 20px 20px;
+          }
+          &.icon2{
+            background-image: url($host+"images/icons/d_menu102_h.png");
+            background-size: 27px 20px;
+          }
+          &.icon3{
+            background-image: url($host+"images/icons/d_menu103_h.png");
+            background-size: 23px 23px;
+          }
+          &.icon4{
+            background-image: url($host+"images/icons/d_menu104_h.png");
+            background-size: 23px 23px;
+          }
+
+        }
+
+      }
+    }
+  }
+}

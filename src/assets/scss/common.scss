@@ -67,10 +67,11 @@
 .mb40{margin-bottom:40px !important;}
 .mb60{margin-bottom:60px !important;}
 
-
+//header
 .header{
   background: #2f220f;
   overflow: hidden;
+  height:226px;
 
   .top{
     @extend %main-width;
@@ -197,6 +198,7 @@
   }
 }
 
+//footer
 .footer{
   background: $yellow-light2;
   overflow: hidden;
@@ -222,6 +224,7 @@
   }
 }
 
+//面包屑
 .crumbs {
   color: #a0917a;
   a {
@@ -237,6 +240,19 @@
   }
 }
 
+//文章内容
+.tz-content{
+  img{
+    max-width: 100%;
+  }
+
+  p{
+    margin-top:31px;
+    line-height:1.81;
+  }
+}
+
+//-------------------------------------------------------------------------
 .input-date{
   color:#2f220f !important;
   padding-right:36px;
@@ -378,7 +394,7 @@
 }
 
 
-.empty{
+.tz-empty{
   margin-top: 20px;
   padding: 100px 10px;
   text-align: center;

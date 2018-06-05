@@ -1,0 +1,35 @@
+@import "core/import";
+
+/*用户个人资料*/
+#user-edit{
+  margin: 0 30px;
+
+  .input-group{
+    margin-top:30px;
+
+    .label{
+      @extend %inline-block;
+      color:$yellow-light3;
+      @include wh(65px,50px,50px);
+    }
+
+    .input{
+      @include input();
+      width:201px;
+      margin-left:24px;
+
+      &.w326{
+        width:326px;
+      }
+    }
+  }
+
+  .phone{margin-left:24px;}
+  .fixed-select{margin-left:25px;@include select-box(201px,48px,48px);}
+
+  .btn-rec{
+    @include btn-yellow(45px);
+    width:173px;
+    margin:45px auto;
+  }
+}

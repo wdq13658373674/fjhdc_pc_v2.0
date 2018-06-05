@@ -1,0 +1,93 @@
+@import "core/import";
+
+#user-project{
+  @include wh(100%,auto);
+
+  .project{
+    @include wh(100%,300px);
+    display:block;
+    border: solid 1px #fff;
+    border-bottom-color:#e1dad0;
+
+    &:hover{
+      @include transition(all .2s linear);
+      @include box-shadow(0 5px 4px 0 rgba(136, 104, 53, 0.21));
+      border: solid 1px #d1a35a;
+    }
+
+    .img{
+      @include wh(300px,208px);
+      @include border-radius(11px);
+      border: solid 1px #d1a35a;
+      overflow: hidden;
+      margin-left:30px;
+      margin-top:47px;
+      text-align: center;
+
+      img{
+        height:100%;
+      }
+    }
+
+    .content{
+      @include wh(556px,auto);
+      margin-left:30px;
+      margin-top:47px;
+    }
+
+    .title-box{
+
+      h1{
+        font-size:20px;
+      }
+
+      .p{
+        @include wh(auto,45px,45px);
+        margin-top:43px;
+
+        .span1{
+          float:left;
+          color:#cbbfaa;
+          @include wh(auto,45px,45px);
+        }
+        .span2{
+          font-size:30px;
+          color:$yellow-light3;
+          margin-left:20px;
+        }
+      }
+    }
+
+    .msg-list{
+      margin-top:10px;
+      .item{
+        float:left;
+        @include wh(50%,35px,35px);
+
+        .tit{
+          color:#cbbfaa;
+          float:left;
+        }
+        .con{
+          padding-left:20px;
+          @extend %ellipsis-basic;
+        }
+      }
+    }
+  }
+
+  .empty{
+    @include wh(407px,57px,57px);
+    @include border-radius(8px);
+    text-align: center;
+    color:#e7b360;
+    border: solid 1px #e7b360;
+    margin:117px auto 0;
+    @include transition(.3s linear);
+
+    &:hover{
+      background-color: #e7b360;
+      color:#fff;
+    }
+  }
+}

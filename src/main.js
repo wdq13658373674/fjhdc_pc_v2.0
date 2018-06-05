@@ -19,7 +19,18 @@ axios.interceptors.request.use(function (config) {
   return config;
 });
 
-/* eslint-disable no-new */
+/**
+ * 全局ajax访问域名
+ * **/
+global.API_HOST="";
+
+/**
+ *
+ * 全局图片域名地址
+ * */
+global.IMG_HOST="";
+
+/**vue实列**/
 new Vue({
   el: '#app',
   router,

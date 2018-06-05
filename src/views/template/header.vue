@@ -4,7 +4,7 @@
       <div class="top clearfix">
         <!--登陆前-->
         <div class="before pull-right">
-          <a href="#">登陆</a>
+          <router-link :to="{name:'Login'}">登陆</router-link>
           <a href="#">注册</a>
           <a class="about" href="#">关于我们</a>
         </div>

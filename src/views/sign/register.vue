@@ -5,7 +5,7 @@
     <div class="form-box">
       <h1 class="title mt40"><img src="@/assets/images/public/logo2_name.png" alt=""></h1>
 
-      <form class="form mt40" id="regForm" @submit="postRegister">
+      <form class="form mt40" action="" id="regForm"  @submit="submit">
         <div class="input-group">
           <div>
             <input class="icon-input phone" type="tel" v-model="inputValue.mobile" autocomplete="off"  placeholder="请输入手机号">
@@ -13,30 +13,31 @@
           <span class="Validform_checktip suc"></span>
         </div>
 
-        <div class="input-group">
+        <div class="input-group mt20">
           <div>
-            <input class="icon-input phone" type="password" v-model="inputValue.password" autocomplete="off"  placeholder="请输入手机号">
+            <input class="icon-input pas" name="password" type="password"  v-model="inputValue.password" autocomplete="off" placeholder="请输入密码">
           </div>
           <span class="Validform_checktip suc"></span>
         </div>
 
-        <div class="input-group">
+        <div class="input-group mt20">
           <div>
-            <input class="icon-input phone" type="password" v-model="inputValue.rpassword" autocomplete="off"  placeholder="请输入手机号">
+            <input class="icon-input pas" type="password" v-model="inputValue.rpassword" autocomplete="off" placeholder="请输入密码">
           </div>
           <span class="Validform_checktip suc"></span>
         </div>
 
-        <div class="input-group">
-          <div>
-            <input class="icon-input phone" type="text" v-model="inputValue.verification" autocomplete="off"  placeholder="请输入手机号">
+        <div class="input-group mt20">
+          <div class="clearfix">
+            <input class="input w189 pull-left" type="text" v-model="inputValue.verification" autocomplete="off" placeholder="请输入验证码">
+            <verify class="pull-right" second=10></verify>
           </div>
           <span class="Validform_checktip suc"></span>
         </div>
 
         <div class="rule-box clearfix mt20">
           <label class="check-label pull-left">
-            <input id="rule" class="check-input" name="rule" datatype="*" sucmsg=" " type="checkbox" checked>
+            <input id="rule" class="check-input" name="rule" type="checkbox" checked>
             <div class="check clearfix">
               <span class="arc pull-left"></span>
             </div>
@@ -52,9 +53,13 @@
 
 <script>
   import {postRegister} from '@/api/info.js'
+  import verify from '@/components/verify'
 
   export default {
     name: "register",
+    components:{
+      verify
+    },
     data(){
       return {
         inputValue:{}
@@ -67,18 +72,20 @@
       /**
        * 注册提交
        * **/
-      async postRegister(){
+      async submit(){
         const params=this.inputValue;
-
         let res =await postRegister(params);
 
-        console.log(res);
+        if(res){
+          console.log(res);
+        }
 
       },
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  $host:'../../assets/';
   @import "../../assets/scss/form";
 </style>

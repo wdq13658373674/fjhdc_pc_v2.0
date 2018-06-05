@@ -2,7 +2,7 @@
 
 .form-wrap{
   min-width: 1200px;
-  background: url("../../assets/images/public/reg_bg1.jpg") 0px 0px no-repeat,url("../../assets/images/public/reg_bg2.jpg") 0 410px no-repeat,url("../../assets/images/public/reg_bg3.jpg") 0 885px no-repeat;
+  background: url($host+"images/public/reg_bg1.jpg") 0px 0px no-repeat,url($host+"images/public/reg_bg2.jpg") 0 410px no-repeat,url($host+"images/public/reg_bg3.jpg") 0 885px no-repeat;
   height:1211px;
   overflow: hidden;
 }
@@ -68,13 +68,13 @@
     background-repeat:no-repeat;
 
     &.user{
-      background-image: url("../../assets/images/icons/c_icon_user.png");
+      background-image: url($host+"images/icons/c_icon_user.png");
     }
     &.phone{
-      background-image: url("../../assets/images/icons/c_icon_phone.png");
+      background-image: url($host+"images/icons/c_icon_phone.png");
     }
     &.pas{
-      background-image: url("../../assets/images/icons/c_icon_pas.png");
+      background-image: url($host+"images/icons/c_icon_pas.png");
     }
   }
 }
@@ -107,7 +107,7 @@
 
       &:checked{
         &+.check .arc{
-          background: url("../../assets/images/icons/c_icon_suc.png") center no-repeat;
+          background: url($host+"images/icons/c_icon_suc.png") center no-repeat;
           background-size: 10px 6px;
         }
       }

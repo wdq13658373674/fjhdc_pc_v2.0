@@ -5,21 +5,20 @@
     <div class="form-box">
       <h1 class="title mt40"><img src="@/assets/images/public/logo2_name.png" alt=""></h1>
 
-      <form class="form mt40" id="logForm" action="">
+      <form class="form mt40" id="logForm" @submit="submit">
         <div class="input-group">
-          <input class="icon-input user required" sucmsg=" " type="text" autocomplete="off" placeholder="请输入手机号">
+          <input class="icon-input user" type="text" v-model="inputValue.mobile" autocomplete="off" placeholder="请输入手机号">
         </div>
         <div class="input-group mt20">
-          <input class="icon-input pas required" sucmsg=" " type="password" autocomplete="off" placeholder="请输入密码">
+          <input class="icon-input pas" type="password" v-model="inputValue.password" autocomplete="off" placeholder="请输入密码">
         </div>
-        <div class="err-tip center" style="width:326px;"></div><!--错误提示-->
 
         <input type="submit" class="btn-submit mt20" value="登陆">
 
         <div class="link clearfix">
           <a class="yellow-light pull-left" href="#">忘记密码 ></a>
 
-          <span class="pull-right yellow">还没有房计划地产账号？ <a class="yellow-light" href="#">点击注册 ></a></span>
+          <span class="pull-right yellow">还没有房计划地产账号？ <router-link class="yellow-light" :to="{name:'Register'}">点击注册 ></router-link></span>
         </div>
       </form>
     </div>
@@ -27,11 +26,32 @@
 </template>
 
 <script>
-    export default {
-        name: "login"
+  import {postLogin} from '@/api/info.js'
+
+  export default {
+    name: "login",
+    data() {
+      return {
+        inputValue: {}
+      }
+    },
+    methods: {
+      /**
+       * 登陆提交
+       * **/
+      async submit(){
+        const params=this.inputValue;
+        let res=await postLogin(params);
+
+        if(res){
+          console.log(res);
+        }
+      }
     }
+  }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+  $host:'../../assets/';
   @import "../../assets/scss/form";
 </style>

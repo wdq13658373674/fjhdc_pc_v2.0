@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!--banner-->
+    <div class="tz-index-banner"></div>
+
     <div class="tz-index-title">
       <div class="bg">
         <span>专注房地产开发管理</span>
@@ -48,19 +51,35 @@
     <div class="tz-index-project">
       <div class="project-list clearfix">
         <a class="item" href="#">
-          <div class="img-box" style="background-image: url('@/assets/images/test/house.jpg')"></div>
+          <div class="img-box" style="">
+            <div class="mask">
+              <span class="arc"></span>
+            </div>
+          </div>
           <div class="con-box">
             <p class="desc">房计划·诚远御府</p>
           </div>
         </a>
         <a class="item" href="#">
-          <div class="img-box" style="background-image: url('@/assets/images/test/house.jpg')"></div>
+          <div class="img-box" style="">
+            <div class="mask">
+              <div class="mask">
+                <span class="arc"></span>
+              </div>
+            </div>
+          </div>
           <div class="con-box">
             <p class="desc">房计划</p>
           </div>
         </a>
         <a class="item" href="#">
-          <div class="img-box" style="background-image: url('@/assets/images/test/house.jpg')"></div>
+          <div class="img-box" style="">
+            <div class="mask">
+              <div class="mask">
+                <span class="arc"></span>
+              </div>
+            </div>
+          </div>
           <div class="con-box">
             <p class="desc">房计划房计划房计划房计划房计划·诚远御府</p>
           </div>
@@ -77,10 +96,12 @@
     </div>
     <div class="tz-index-news clearfix">
       <div class="news-list pull-left">
-        <a class="item" href="#">
+        <router-link class="item" :to="{name:'NewsDetail',query:{
+          id:1
+        }}">
           <span class="date">2018.05.24 </span>
           横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
-        </a>
+        </router-link>
         <a class="item" href="#">
           <span class="date">2018.05.24 </span>
           横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
@@ -131,6 +152,7 @@
         async getProjectList(){
           let res =await getIndex();
 
+          console.log(res);
           if(res){
             this.projectList=res.ret.data;
           }

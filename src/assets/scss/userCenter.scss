@@ -1,0 +1,37 @@
+@import "core/import";
+
+/*用户个人中心*/
+.user-msg-list{
+  margin: 0 30px;
+
+  .img{
+    @include wh(140px,140px);
+    overflow: hidden;
+    text-align: center;
+    margin-top:56px;
+    @include border-radius(5px);
+    @include box-shadow(0 5px 4px 0 rgba(136, 104, 53, 0.41));
+    border: solid 1px #d1a35a;
+    img{
+      height:100%;
+    }
+  }
+
+  .msg-list{
+    margin-top:71px;
+    padding-left:160px;
+
+    .item{
+      @include wh(100%,35px,35px);
+    }
+
+    .btn-edit{
+      @include btn-white(35px);
+      @include border-radius(5px);
+      font-size:14px;
+      padding:8px;
+      line-height:17px;
+      width:148px;
+    }
+  }
+}

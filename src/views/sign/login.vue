@@ -1,6 +1,6 @@
 <template>
   <div class="form-wrap">
-    <a class="logo mt180" href="#"><img src="@/assets/images/public/logo.png" alt=""></a>
+    <a class="logo mt180" href="/"><img src="@/assets/images/public/logo.png" alt=""></a>
 
     <div class="form-box">
       <form class="form mt40" id="logForm" @submit="submit">

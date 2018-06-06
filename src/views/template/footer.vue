@@ -5,7 +5,7 @@
       <p class="p2">CONTACT US</p>
       <p class="p3 clearfix">
         400-135-6677
-        <span class="f12 pull-right">© 2015 重庆信力达科技集团 沪ICP备16003014号</span>
+        <span class="f12 pull-right">© 2018 重庆市信力达科技集团有限公司 渝ICP备18004075号-2</span>
       </p>
     </div>
   </footer>

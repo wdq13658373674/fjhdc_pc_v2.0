@@ -16,7 +16,7 @@
         default:'',
       },
       type:{
-        default:1,
+        default:1,//1：注册；2：修改手机；3：找回密码
       },
     },
     data(){
@@ -32,36 +32,22 @@
     },
     methods:{
       /**获取验证码*/
-      getCode(){
+      async getCode(){
         this.start();
 
-        /*if(this.phone == ''){
-          this.$vux.toast.show('请输入手机号码');
-          return;
-        }else if(!utils.is_mobile(this.phone)){
-          this.$vux.toast.show('手机号码格式不正确');
-          return;
-        }
-        this.start();
-
-        let params={
+        const params={
           'mobile':this.phone,
           'type':this.type
         }
-        this.$axios.post(global.API_HOST+'index/sendVerify',qs.stringify(params)).then(res=>{
-          res=res.data;
+        let res =await postVerify(params);
 
-          if(res.status==1){
-            this.$vux.toast.show(res.msg);
-            return;
-          }
-          this.$emit('run',res.data);
-          this.$vux.alert.show({
-            content: res.data
-          })
-        }).catch(err=>{
-          console.log(err);
-        })*/
+        if(res){
+          /**
+           * todo : 后期修改验证码
+           * **/
+          var code_num=res.ret.content.slice(21,27);
+          this.$emit('run',code_num);
+        }
       },
       /**计时开始*/
       start(){

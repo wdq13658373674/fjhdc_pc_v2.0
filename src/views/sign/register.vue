@@ -28,7 +28,7 @@
         <div class="input-group mt20">
           <div class="clearfix">
             <input class="input w189 pull-left" type="text" v-model="inputValue.verification" autocomplete="off" placeholder="请输入验证码">
-            <verify class="pull-right" second=10></verify>
+            <verify class="pull-right" second=10 phone="13658373674" @run="getVerify"></verify>
           </div>
           <span class="Validform_checktip suc"></span>
         </div>
@@ -79,6 +79,12 @@
         }
 
       },
+      /**
+       * 获取验证码
+       * **/
+      getVerify(code){
+        alert('验证码:'+code);
+      }
     }
   }
 </script>

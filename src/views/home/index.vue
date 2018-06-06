@@ -91,14 +91,19 @@
         <router-link class="item" :to="{name:'NewsDetail',query:{
           id:1
         }}" v-for="items in newsList">
-          <span class="date">{{items.create_time}}</span>
-          {{items.name}}
+          <span class="date">{{items.create_time | stampToDate}}</span>
+          {{items.title}}
         </router-link>
       </div>
 
       <div class="about-box pull-right">
-        <div class="title">房计划首家物业二手房专营店诞生</div>
+        <!--<div class="title">房计划首家物业二手房专营店诞生</div>
         <div class="con">作为万科作为万科物业旗下房屋资产服务机构作为万科物业旗下房屋资产服务机构作为万科物业旗下房屋资产服务机构作为万科物业旗下房屋资产服务机构作为万科物业旗下房屋资产服务机构物业旗下房屋资产服务机构“万科租售中心”，5月28日将在全国百城租售门店同步更名为“朴邻·万科物业二手房专营店”（以下简称为“朴邻”）。标志着国内物业行业的首家二手房营店诞生，新品牌朴邻将集中全力深化接管小区的二手房业务，持续为业主实现不动产的保值增值，让客户感受经纪服务的信任和温度。</div>
+        <div>
+          <a class="link" href="#">查看详情</a>
+        </div>-->
+        <div class="title">{{recommend.title}}</div>
+        <div class="con" v-html="recommend.content"></div>
         <div>
           <a class="link" href="#">查看详情</a>
         </div>
@@ -117,7 +122,8 @@
         return {
           IMG_HOST:global.IMG_HOST || '',
           projectList:[],
-          newsList:[]
+          newsList:[],
+          recommend:[]
         }
       },
       mounted(){
@@ -142,7 +148,8 @@
           let res =await getIndexNews();
 
           if(res){
-            this.newsList=res.ret.data;
+            this.newsList=res.ret.data.data;
+            this.recommend=res.ret.recommend;
           }
         },
       }

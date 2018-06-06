@@ -5,7 +5,7 @@
         <!--登陆前-->
         <div class="before pull-right">
           <router-link :to="{name:'Login'}">登陆</router-link>
-          <a href="#">注册</a>
+          <router-link :to="{name:'Register'}">注册</router-link>
           <a class="about" href="#">关于我们</a>
         </div>
 

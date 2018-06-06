@@ -50,7 +50,7 @@
     </div>
     <div class="tz-index-project">
       <div class="project-list clearfix">
-        <a class="item" href="#">
+        <!--<a class="item" href="#">
           <div class="img-box" style="">
             <div class="mask">
               <span class="arc"></span>
@@ -59,9 +59,9 @@
           <div class="con-box">
             <p class="desc">房计划·诚远御府</p>
           </div>
-        </a>
-        <a class="item" href="#">
-          <div class="img-box" style="">
+        </a>-->
+        <a class="item" href="#" v-for="(items,index) in projectList" :key="index">
+          <div class="img-box" :style="{backgroundImage:'url('+ IMG_HOST+items.cover +')'}">
             <div class="mask">
               <div class="mask">
                 <span class="arc"></span>
@@ -69,19 +69,7 @@
             </div>
           </div>
           <div class="con-box">
-            <p class="desc">房计划</p>
-          </div>
-        </a>
-        <a class="item" href="#">
-          <div class="img-box" style="">
-            <div class="mask">
-              <div class="mask">
-                <span class="arc"></span>
-              </div>
-            </div>
-          </div>
-          <div class="con-box">
-            <p class="desc">房计划房计划房计划房计划房计划·诚远御府</p>
+            <p class="desc">{{items.title}}</p>
           </div>
         </a>
       </div>
@@ -96,28 +84,16 @@
     </div>
     <div class="tz-index-news clearfix">
       <div class="news-list pull-left">
+        <!--<a class="item" href="#">
+          <span class="date">2018.05.24 </span>
+          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
+        </a>-->
         <router-link class="item" :to="{name:'NewsDetail',query:{
           id:1
-        }}">
-          <span class="date">2018.05.24 </span>
-          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
+        }}" v-for="items in newsList">
+          <span class="date">{{items.create_time}}</span>
+          {{items.name}}
         </router-link>
-        <a class="item" href="#">
-          <span class="date">2018.05.24 </span>
-          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
-        </a>
-        <a class="item" href="#">
-          <span class="date">2018.05.24 </span>
-          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
-        </a>
-        <a class="item" href="#">
-          <span class="date">2018.05.24 </span>
-          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
-        </a>
-        <a class="item" href="#">
-          <span class="date">2018.05.24 </span>
-          横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
-        </a>
       </div>
 
       <div class="about-box pull-right">
@@ -133,17 +109,20 @@
 </template>
 
 <script>
-  import { getIndex } from '@/api/info.js'
+  import { getIndex , getIndexNews } from '@/api/info.js'
 
   export default {
       name: "index",
       data(){
         return {
-          projectList:[]
+          IMG_HOST:global.IMG_HOST || '',
+          projectList:[],
+          newsList:[]
         }
       },
       mounted(){
         this.getProjectList();
+        this.getNewsList();
       },
       methods:{
         /**
@@ -152,9 +131,18 @@
         async getProjectList(){
           let res =await getIndex();
 
-          console.log(res);
           if(res){
             this.projectList=res.ret.data;
+          }
+        },
+        /**
+         * 获取文章动态列表
+         * **/
+        async getNewsList(){
+          let res =await getIndexNews();
+
+          if(res){
+            this.newsList=res.ret.data;
           }
         },
       }

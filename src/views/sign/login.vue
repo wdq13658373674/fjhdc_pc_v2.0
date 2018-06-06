@@ -1,10 +1,8 @@
 <template>
   <div class="form-wrap">
-    <a class="logo mt180" href="#"><img src="@/assets/images/public/logo2.png" alt=""></a>
+    <a class="logo mt180" href="#"><img src="@/assets/images/public/logo.png" alt=""></a>
 
     <div class="form-box">
-      <h1 class="title mt40"><img src="@/assets/images/public/logo2_name.png" alt=""></h1>
-
       <form class="form mt40" id="logForm" @submit="submit">
         <div class="input-group">
           <input class="icon-input user" type="text" v-model="inputValue.mobile" autocomplete="off" placeholder="请输入手机号">

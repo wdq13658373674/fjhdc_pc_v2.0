@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import * as filters from '@/libs/filter'
 
 Vue.config.productionTip = false
 
@@ -28,7 +29,16 @@ global.API_HOST="";
  *
  * 全局图片域名地址
  * */
-global.IMG_HOST="";
+global.IMG_HOST="http://res.2.fjhok.com/res/image/";
+
+/**
+ * 全局过滤器
+ * **/
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
+
 
 /**vue实列**/
 new Vue({

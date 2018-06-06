@@ -10,6 +10,14 @@ export  async function getIndex() {
 }
 
 /**
+ * 首页文章列表
+ * **/
+export  async function getIndexNews() {
+  let res = await axios.get(global.API_HOST+'Document/getDocumentIndex');
+  return res.data[0];
+}
+
+/**
  * 注册
  * params : 接口接收参数
  * **/

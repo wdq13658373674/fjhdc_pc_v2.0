@@ -38,7 +38,23 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
-
+/**
+ * 路由全局拦截器
+ * **/
+router.beforeEach((to,from,next)=>{
+  /**登陆拦截**/
+  /*if (to.meta.requireAuth){
+    if (store.state.userInfo.user_id) {
+      next();
+    }else {
+      next({
+        path: '/login',
+        query: {redirect: router.currentRoute.fullPath}
+      })
+    }
+  }*/
+  next()
+})
 
 /**vue实列**/
 new Vue({

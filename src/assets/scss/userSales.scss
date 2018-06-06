@@ -118,6 +118,9 @@
   }
 
   .project-table{
+    @include zebra-stripe($yellow-light2,$yellow-light2);
+    @include tr-hover();
+
     thead{
       &>tr>td{
         height: 50px;
@@ -131,21 +134,31 @@
         color:#2f220f;
         text-align: center;
         border-bottom:2px solid #fff;
+        cursor: pointer;
       }
 
-      .edit-box{
-        text-align: right;
-      }
-      .edit{
-        color:$yellow-light;
-        margin-right:15px;
-      }
-
-      .rec{
-        color:#fa4a02;
+      &>.total>td{
+        background: #f8e3c1 !important;
       }
     }
-    @include zebra-stripe($yellow-light2,$yellow-light2);
+
+  }
+
+  .date-box{
+    .input-group{
+      margin-top:25px;
+      float:left;
+      margin-right:27px;
+
+      .input{
+        @include input(40px);
+        width:168px;
+
+        &.w326{
+          width:326px;
+        }
+      }
+    }
   }
 }
 

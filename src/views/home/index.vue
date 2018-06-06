@@ -59,8 +59,12 @@
           <div class="con-box">
             <p class="desc">房计划·诚远御府</p>
           </div>
+
+
         </a>-->
-        <a class="item" href="#" v-for="(items,index) in projectList" :key="index">
+        <router-link class="item" :to="{name:'ProjectDetail',query:{
+          id:items.id
+        }}" v-for="(items,index) in projectList" :key="index">
           <div class="img-box" :style="{backgroundImage:'url('+ IMG_HOST+items.cover +')'}">
             <div class="mask">
               <div class="mask">
@@ -71,7 +75,7 @@
           <div class="con-box">
             <p class="desc">{{items.title}}</p>
           </div>
-        </a>
+        </router-link>
       </div>
 
     </div>

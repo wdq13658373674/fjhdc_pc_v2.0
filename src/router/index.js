@@ -8,6 +8,9 @@ import Footer from '@/views/template/footer'
 /**首页**/
 import Index from '@/views/home'
 
+/**项目详情**/
+import ProjectDetail from '@/views/project/detail'
+
 /**登陆注册**/
 import Login from '@/views/sign/login'
 import Register from '@/views/sign/register'
@@ -38,6 +41,15 @@ export default new Router({
       name: 'Index',
       components: {
         default: Index,
+        header: Header,
+        footer: Footer,
+      }
+    },
+    {
+      path: '/project/detail',
+      name: 'ProjectDetail',
+      components: {
+        default: ProjectDetail,
         header: Header,
         footer: Footer,
       }

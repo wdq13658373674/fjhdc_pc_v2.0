@@ -282,6 +282,7 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  $host:'../../assets/';
+  @import "../../assets/scss/project";
 </style>

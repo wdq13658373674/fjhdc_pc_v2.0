@@ -445,7 +445,7 @@
       display:block;
       float: left;
       @include wh(40px,40px);
-      background: url("./assets/images/icons/z_suc.png") center no-repeat;
+      background: url($host+"images/icons/z_suc.png") center no-repeat;
       background-size: 40px 40px;
       margin-right:13px;
     }*/
@@ -471,14 +471,14 @@
         border: solid 2px #d1a35a !important;
         line-height:46px !important;
         color:$yellow !important;
-        background: url("./assets/images/icons/z_check.png") right -1px bottom -1px no-repeat;
+        background: url($host+"images/icons/z_check.png") right -1px bottom -1px no-repeat;
         background-size: 28px 28px;
       }
 
       &+.msg-item{
         @include box-shadow(0 5px 4px 0 rgba(203, 191, 170, 0.35));
         border: solid 2px #d1a35a !important;
-        background: url("./assets/images/icons/z_check.png") right -1px bottom -1px no-repeat;
+        background: url($host+"images/icons/z_check.png") right -1px bottom -1px no-repeat;
         background-size: 28px 28px;
 
         .item-box{

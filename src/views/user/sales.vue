@@ -76,7 +76,6 @@
               <span class="title">总销售计划</span>
               <div class="line"></div>
             </div>
-
             <table class="project-table mt20">
               <thead>
               <tr>
@@ -103,17 +102,40 @@
                 <td>0</td>
                 <td>0</td>
               </tr>
+              <tr class="total">
+                <td>合计</td>
+                <td>200</td>
+                <td>20</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
               </tbody>
             </table>
 
-            <div class="title mt50">月销售情况</div>
+            <div class="tz-line-title mt90">
+              <span class="title">洋房月销售情况</span>
+              <div class="line"></div>
+            </div>
+
+            <div class="date-box clearfix">
+              <div class="input-group">
+                <input class="input input-date" value="1992-02-07" type="text">
+                <span class="Validform_checktip ml20"></span>
+              </div>
+
+              <div class="input-group">
+                <input class="input input-date" value="1992-02-07" type="text">
+                <span class="Validform_checktip ml20"></span>
+              </div>
+            </div>
+
             <table class="project-table mt20 mb60">
               <thead>
               <tr>
                 <td>日期</td>
-                <td>计划</td>
-                <td>实际</td>
-                <td>完成率</td>
+                <td>报名</td>
+                <td>认筹</td>
+                <td>签约</td>
               </tr>
               </thead>
 
@@ -129,6 +151,12 @@
                 <td>200</td>
                 <td>450</td>
                 <td>24%</td>
+              </tr>
+              <tr class="total">
+                <td>合  计</td>
+                <td>1500</td>
+                <td>0</td>
+                <td>0</td>
               </tr>
               </tbody>
             </table>

@@ -111,7 +111,9 @@
         <div class="title">{{recommend.title}}</div>
         <div class="con" v-html="recommend.content"></div>
         <div>
-          <a class="link" href="#">查看详情</a>
+          <router-link class="link" :to="{name:'NewsDetail',query:{
+            id:recommend.id
+          }}">查看详情</router-link>
         </div>
       </div>
     </div>

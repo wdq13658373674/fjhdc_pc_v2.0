@@ -107,6 +107,8 @@
     @extend %main-width;
     overflow: hidden;
     min-height:500px;
+    padding-bottom:50px;
+    position: relative;
 
     &.active{
       display:block;
@@ -117,9 +119,27 @@
     }
   }
 
+  .back-btn{
+    position: absolute;
+    top:47px;
+    @include btn-white(35px);
+    width:93px;
+    font-size:10px;
+  }
+
   .project-table{
     @include zebra-stripe($yellow-light2,$yellow-light2);
     @include tr-hover();
+
+    tr>td{
+      &:first-child,&:last-child{
+        color:#886835;
+      }
+    }
+
+    .link{
+      cursor: pointer;
+    }
 
     thead{
       &>tr>td{
@@ -134,7 +154,6 @@
         color:#2f220f;
         text-align: center;
         border-bottom:2px solid #fff;
-        cursor: pointer;
       }
 
       &>.total>td{
@@ -144,7 +163,7 @@
 
   }
 
-  .date-box{
+  /*.date-box{
     .input-group{
       margin-top:25px;
       float:left;
@@ -159,6 +178,6 @@
         }
       }
     }
-  }
+  }*/
 }
 

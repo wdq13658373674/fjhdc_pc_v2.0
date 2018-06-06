@@ -1,7 +1,7 @@
 <template>
   <!--参与项目-->
   <div id="user-project" class="clearfix">
-    <router-link class="project clearfix" :to="{name:'UserProjectSales',query:{
+    <router-link class="project clearfix" :to="{name:'UserSales',query:{
       id:1
     }}">
       <div class="img pull-left"><img src="@/assets/images/test/house.jpg" alt=""></div>

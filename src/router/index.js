@@ -8,6 +8,9 @@ import Footer from '@/views/template/footer'
 /**首页**/
 import Index from '@/views/home'
 
+/**关于我们**/
+import About from '@/views/about'
+
 /**项目详情**/
 import ProjectDetail from '@/views/project/detail'
 
@@ -23,8 +26,13 @@ import NewsDetail from '@/views/news/detail'
 import UserLayout from '@/views/user/layout'
 import User from '@/views/user/index'
 import UserProject from '@/views/user/project'
-import UserProjectSales from '@/views/user/sales'
 import UserMessage from '@/views/user/message'
+
+/**个人中心-参与项目**/
+import UserReport from '@/views/user/report'
+import UserSales from '@/views/user/sales'
+import UserFinancial from '@/views/user/financial'
+import UserFinancialDetail from '@/views/user/financialDetail'
 
 Vue.use(Router)
 
@@ -41,6 +49,15 @@ export default new Router({
       name: 'Index',
       components: {
         default: Index,
+        header: Header,
+        footer: Footer,
+      }
+    },
+    {
+      path: '/about',
+      name: 'About',
+      components: {
+        default: About,
         header: Header,
         footer: Footer,
       }
@@ -82,8 +99,9 @@ export default new Router({
         footer: Footer,
       },
     },
+
     /**
-     * layout
+     *个人中心 layout
      * */
     {
       path: '/layout',
@@ -106,12 +124,30 @@ export default new Router({
         },
       ]
     },
+
+    /**
+     *个人中心-参与项目详情 layout
+     * */
     {
-      path: '/user/sales',
-      name: 'UserProjectSales',
-      components: {
-        default: UserProjectSales,
-      },
+      path: '/report',
+      component: UserReport,
+      children: [
+        {
+          path: '/user/sales',
+          name: 'UserSales',
+          component: UserSales
+        },
+        {
+          path: '/user/financial',
+          name: 'UserFinancial',
+          component: UserFinancial
+        },
+        {
+          path: '/user/financial/detail',
+          name: 'UserFinancialDetail',
+          component: UserFinancialDetail
+        },
+      ]
     },
   ]
 })

@@ -13,12 +13,14 @@ import Login from '@/views/sign/login'
 import Register from '@/views/sign/register'
 
 /**新闻动态**/
+import News from '@/views/news/index'
 import NewsDetail from '@/views/news/detail'
 
 /**个人中心**/
 import UserLayout from '@/views/user/layout'
 import User from '@/views/user/index'
 import UserProject from '@/views/user/project'
+import UserProjectSales from '@/views/user/sales'
 import UserMessage from '@/views/user/message'
 
 Vue.use(Router)
@@ -59,6 +61,15 @@ export default new Router({
         footer: Footer,
       },
     },
+    {
+      path: '/news/index',
+      name: 'News',
+      components: {
+        default: News,
+        header: Header,
+        footer: Footer,
+      },
+    },
     /**
      * layout
      * */
@@ -82,6 +93,13 @@ export default new Router({
           component: UserMessage
         },
       ]
-    }
+    },
+    {
+      path: '/user/sales',
+      name: 'UserProjectSales',
+      components: {
+        default: UserProjectSales,
+      },
+    },
   ]
 })

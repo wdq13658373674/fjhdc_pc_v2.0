@@ -10,7 +10,7 @@
       </div>
 
 
-      <h1 class="title">横琴联手万科，全国首个物业城市启动建设</h1>
+      <!--<h1 class="title">横琴联手万科，全国首个物业城市启动建设</h1>
       <p class="total">
         <span class="mr20">2018.05.24 </span>
         <span>浏览量</span>
@@ -21,30 +21,45 @@
         <p>
           <img src="@/assets/images/test/house.jpg" alt="">
         </p>
-      </div>
+      </div>-->
+
+      <h1 class="title">{{newsDetail.title}}</h1>
+      <p class="total">
+        <span class="mr20">{{newsDetail.create_time | stampToDate}} </span>
+        <span>浏览量</span>
+        <span>{{newsDetail.view}}</span>
+      </p>
+      <div class="tz-content" v-html="newsDetail.content"></div>
     </div>
   </div>
 </template>
 
 <script>
-  import { getIndex } from '@/api/info.js'
+  import { postNewsDetail } from '@/api/info.js'
 
   export default {
-      name: "news",
+      name: "detail",
       data(){
         return {
-
+          newsDetail:[]
         }
       },
       mounted(){
-
+        this.getNewsDetail()
       },
       methods:{
         /**
-         * 获取项目列表
+         * 获取新闻详情
          * **/
-        async getProjectList(){
+        async getNewsDetail(){
+          const params={
+            document_id:this.$route.query.id
+          }
+          let res=await postNewsDetail(params);
 
+          if(res){
+            this.newsDetail=res.ret;
+          }
         },
       }
     }

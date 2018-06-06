@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--header-->
-    <header></header>
+    <headers></headers>
     <!--header-->
 
     <div class="tz-user-wrap min-width">
@@ -32,13 +32,13 @@
 </template>
 
 <script>
-  import header from './header'
+  import headers from './header'
   import menus from './menu'
 
   export default {
     name: "layout",
     components: {
-      header,
+      headers,
       menus
     }
   }

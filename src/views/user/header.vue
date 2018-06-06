@@ -1,8 +1,10 @@
 <template>
-  <header class="header min-width">
-    <a href="#">
-      <img src="@/assets/images/public/logo.png" alt="">
-    </a>
+  <header class="tz-user-header min-width">
+    <div class="nav clearfix">
+      <a href="#">
+        <img src="@/assets/images/public/logo.png" alt="">
+      </a>
+    </div>
   </header>
 </template>
 

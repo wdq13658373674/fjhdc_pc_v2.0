@@ -1,0 +1,57 @@
+@import "core/import";
+
+.tz-pro-title{
+  @extend %main-width;
+  height:55px;
+  line-height:55px;
+  border-bottom:1px solid $grayLight;
+  margin-top:80px;
+
+  .span1{
+    font-size:20px;
+  }
+
+  .span2{
+    font-size:16px;
+    color:$yellow-light;
+    margin-left:20px;
+  }
+
+  .link{
+    float:right;
+    color:$yellow;
+    font-size:16px;
+
+    &:hover{
+      color:$yellow-light4;
+    }
+  }
+}
+
+.tz-news-list{
+  @extend %main-width;
+
+  .news-list{
+    margin-top:62px;
+    @include wh(100%,auto);
+    min-height:100px;
+    overflow: hidden;
+
+    .item{
+      font-size: 16px;
+      @include wh(100%,25px);
+      margin-bottom:44px;
+      float:left;
+      @extend %ellipsis-basic;
+
+      &:hover{
+        text-decoration: underline;
+      }
+
+      .date{
+        color: #886835;
+        margin-right:18px;
+      }
+    }
+  }
+}

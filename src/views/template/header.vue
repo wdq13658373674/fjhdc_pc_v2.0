@@ -31,7 +31,7 @@
       </a>
 
       <div class="menu pull-right">
-        <a class="item active" href="#">首页</a>
+        <router-link class="item active" to="/">首页</router-link>
         <a class="item" href="#">定制购房</a>
         <a class="item" href="#">房计划物业</a>
         <a class="item" href="#">团转到家</a>

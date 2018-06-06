@@ -18,6 +18,24 @@ export  async function getIndexNews() {
 }
 
 /**
+ * 文章动态列表页
+ * params : 接口接收参数
+ * **/
+export  async function postNews(params) {
+  let res = await axios.post(global.API_HOST + 'Document/getDocumentMore',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
+ * 文章详情
+ * params : 接口接收参数
+ * **/
+export  async function postNewsDetail(params) {
+  let res = await axios.post(global.API_HOST+'Document/getDocumentInfo',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
  * 注册
  * params : 接口接收参数
  * **/

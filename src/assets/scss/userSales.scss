@@ -1,0 +1,151 @@
+@import "core/import";
+
+//带线条的标题
+.tz-line-title{
+  text-align: center;
+  height:30px;
+  .title{
+    @extend %inline-block;
+    font-size:20px;
+    background: #fff;
+    padding:0 20px;
+  }
+  .line{
+    @include wh(374px,20px);
+    border-bottom:1px solid $grayLight;
+    margin:-34px auto 0;
+  }
+}
+
+#project-sales{
+  .project-content{
+    margin:56px 30px 0;
+
+    .img{
+      @include wh(300px,208px);
+      @include border-radius(11px);
+      border: solid 1px #d1a35a;
+      overflow: hidden;
+      text-align: center;
+
+      img{
+        height:100%;
+      }
+    }
+
+    .content{
+      @include wh(804px,206px);
+      overflow: hidden;
+    }
+
+    .msg-list {
+      margin-top:27px;
+      .item {
+        float: left;
+        padding-right: 78px;
+        height: 62px;
+        overflow: hidden;
+
+        .tit {
+          color: #cbbfaa;
+          @include wh(auto, 19px, 19px);
+          overflow: hidden;
+          font-weight:300;
+        }
+
+        .con {
+          @include wh(auto, 43px, 43px);
+          overflow: hidden;
+          color: $yellow-light;
+          vertical-align: bottom;
+          font-size: 25px;
+          font-weight:300;
+
+        }
+      }
+    }
+
+    .msg-list2{
+      margin-top:15px;
+      .item{
+        float:left;
+        @include wh(33.3333%,35px,35px);
+
+        .tit{
+          color:#cbbfaa;
+          width:75px;
+          float:left;
+        }
+        .con{
+          @extend %ellipsis-basic;
+        }
+      }
+    }
+  }
+
+  #project-tab{
+    @extend %main-width;
+    overflow: hidden;
+    margin:0 30px 0;
+    height:50px;
+    .item{
+      float:left;
+      @include wh(160px,50px,50px);
+      text-align: center;
+      color:$black;
+      font-size:16px;
+      cursor: pointer;
+
+      &.active{
+        background-color: #f4efe8;
+      }
+    }
+  }
+
+  .tab-box{
+    display:none;
+    @extend %main-width;
+    overflow: hidden;
+    min-height:500px;
+
+    &.active{
+      display:block;
+    }
+
+    .content{
+      margin:0 30px;
+    }
+  }
+
+  .project-table{
+    thead{
+      &>tr>td{
+        height: 50px;
+        background-color: #e7b360;
+        text-align: center;
+      }
+    }
+    tbody{
+      &>tr>td{
+        @include wh(auto,50px);
+        color:#2f220f;
+        text-align: center;
+        border-bottom:2px solid #fff;
+      }
+
+      .edit-box{
+        text-align: right;
+      }
+      .edit{
+        color:$yellow-light;
+        margin-right:15px;
+      }
+
+      .rec{
+        color:#fa4a02;
+      }
+    }
+    @include zebra-stripe($yellow-light2,$yellow-light2);
+  }
+}
+

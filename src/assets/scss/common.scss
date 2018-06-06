@@ -252,6 +252,39 @@
   }
 }
 
+//tz-user
+.tz-user-header{
+  height:200px;
+  background: $yellow-light2;
+  overflow: hidden;
+
+  .nav{
+    @extend %main-width;
+    margin-top:64px;
+  }
+}
+
+.tz-user-crumbs{
+  @extend %main-width;
+}
+
+.user-hr{
+  @include horizontal-line(solid 1px #e1dad0);
+}
+
+.user-project-wrap{
+  background: $yellow-light2;
+  overflow: hidden;
+}
+
+.user-project-container{
+  @extend %main-width;
+  background: #fff;
+  margin-bottom:76px;
+  overflow: hidden;
+  min-height:1000px;
+}
+
 //-------------------------------------------------------------------------
 .input-date{
   color:#2f220f !important;

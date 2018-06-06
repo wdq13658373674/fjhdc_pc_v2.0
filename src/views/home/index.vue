@@ -46,7 +46,7 @@
     <div class="tz-pro-title">
       <span class="span1">管理项目</span>
       <span class="span2">MANAGEMENT ITEM</span>
-      <a class="link" href="#">+ MORE</a>
+      <router-link class="link" :to="{name:'News'}">+ MORE</router-link>
     </div>
     <div class="tz-index-project">
       <div class="project-list clearfix">
@@ -80,7 +80,7 @@
     <div class="tz-pro-title">
       <span class="span1">企业动态</span>
       <span class="span2">BUSINESS MOVEMENT</span>
-      <a class="link" href="#">+ MORE</a>
+      <router-link class="link" :to="{name:'News'}">+ MORE</router-link>
     </div>
     <div class="tz-index-news clearfix">
       <div class="news-list pull-left">
@@ -88,9 +88,10 @@
           <span class="date">2018.05.24 </span>
           横横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科横琴联手万科琴联手万科，全国首个物业城市启动建设
         </a>-->
+
         <router-link class="item" :to="{name:'NewsDetail',query:{
-          id:1
-        }}" v-for="items in newsList">
+          id:items.id
+        }}" v-for="(items,index) in newsList" :key="index">
           <span class="date">{{items.create_time | stampToDate}}</span>
           {{items.title}}
         </router-link>
@@ -102,6 +103,7 @@
         <div>
           <a class="link" href="#">查看详情</a>
         </div>-->
+
         <div class="title">{{recommend.title}}</div>
         <div class="con" v-html="recommend.content"></div>
         <div>

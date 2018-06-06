@@ -26,16 +26,16 @@
       </div>
     </div>
     <div class="nav clearfix">
-      <a href="#" class="pull-left">
+      <a href="/" class="pull-left">
         <img src="@/assets/images/public/logo.png" alt="">
       </a>
 
       <div class="menu pull-right">
         <router-link class="item active" to="/">首页</router-link>
-        <a class="item" href="#">定制购房</a>
-        <a class="item" href="#">房计划物业</a>
-        <a class="item" href="#">团转到家</a>
-        <a class="item" href="#">房计划装修</a>
+        <a class="item" target="_blank" href="http://www.fjhok.com/Project/index.html">定制购房</a>
+        <a class="item" target="_blank" href="http://www.fjhok.com/Public/wy/t/wy.html">房计划物业</a>
+        <a class="item" target="_blank" href="http://cq.tuanzhuanw.com/">团转到家</a>
+        <a class="item" target="_blank" href="http://www.fjhok.com/Public/zx/t/wy.html">房计划装修</a>
       </div>
     </div>
   </header>

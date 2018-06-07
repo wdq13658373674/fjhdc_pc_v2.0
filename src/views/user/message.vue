@@ -114,9 +114,9 @@
             let res =await postUserMessage(params);
 
             if(res.code==0){
-              console.log('你没有修改');
+              this.$message.warning('你没有修改');
             }else{
-              console.log('修改成功')
+              this.$message.success('修改成功');
             }
           }
         },

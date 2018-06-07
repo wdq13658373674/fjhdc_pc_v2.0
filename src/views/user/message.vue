@@ -13,7 +13,7 @@
 
     <div class="user-hr mt40"></div>
 
-    <form id="msgForm" class="form mt20" action="">
+    <form id="msgForm" class="form mt20" @submit.prevent="submit">
       <div class="input-group">
         <label class="label">手机号码</label>
         <span class="phone">{{info.mobile}}</span>
@@ -21,33 +21,21 @@
 
       <div class="input-group">
         <label class="label">会员昵称</label>
-        <input class="input required" sucmsg=" " :value="info.nickname" type="text" placeholder="请输入昵称">
-        <span class="Validform_checktip ml20"></span>
+        <input class="input" :value="info.nickname" type="text" placeholder="请输入昵称">
       </div>
       <div class="input-group clearfix">
         <label class="label pull-left">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</label>
-
-        <div class="fixed-select select-box pull-left">
-          <div class="form-control">
-            <span v-if="info.sex">男</span>
-            <span v-else>女</span>
-          </div>
-          <input class="required" sucmsg=" " type="hidden" datatype="text" id=""  :value="info.sex" />
-          <ul>
-            <li value="0">女</li>
-            <li value="1">男</li>
-          </ul>
-        </div>
+        <Select v-model="info.sex" style="width:201px" class="tz-select">
+          <Option v-for="item in sexList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+        </Select>
       </div>
       <div class="input-group">
         <label class="label">出生日期</label>
-        <input id="date" class="input input-date required" sucmsg=" " type="text" :value="info.birthday">
-        <span class="Validform_checktip ml20"></span>
+        <DatePicker type="date" :clearable="false" :editable="false" :value="info.birthday" placeholder="Select date" class="tz-date"></DatePicker>
       </div>
       <div class="input-group">
         <label class="label">联系地址</label>
-        <input class="input w326 required" sucmsg=" " type="text" placeholder="请输入联系地址" :value="info.address">
-        <span class="Validform_checktip ml20"></span>
+        <input class="input w326" type="text" placeholder="请输入联系地址" :value="info.address">
       </div>
 
       <div class="user-hr mt40"></div>
@@ -60,14 +48,27 @@
 
 <script>
   import {mapMutations} from 'vuex'
-    import { getUserInfo } from '@/api/info.js'
+  import { getUserInfo } from '@/api/info.js'
 
     export default {
       name: "message",
       data(){
         return {
-          info:[]
+          info:[],
+          sexList:[
+            {
+              value: 'New York',
+              label: 'New York'
+            },
+            {
+              value: 'London',
+              label: 'London'
+            },
+          ],
         }
+      },
+      components:{
+
       },
       mounted(){
         this.getUserInfo();
@@ -86,6 +87,17 @@
           if(res){
             res.ret.last_login_time == '1970-01-01 08:00:00' ? res.ret.last_login_time=this.$utils.stampToDate(new Date()/1000,true) : res.ret.last_login_time=res.ret.last_login_time;
             this.info=res.ret;
+          }
+        },
+        /**
+         * 表单提交
+         * **/
+        async submit(){
+          var params=this.info;
+          let res =await getUserInfo(params);
+
+          if(res){
+
           }
         },
         /**

@@ -305,13 +305,6 @@
 }
 
 //-------------------------------------------------------------------------
-.input-date{
-  color:#2f220f !important;
-  padding-right:36px;
-  background: url('./assets/images/icons/c_icon_date.png') right 15px center no-repeat;
-  background-size: 21px 21px;
-}
-
 .border-line{
   @include wh(100%,7px,7px);
   background: url("./assets/images/icons/z_vr.png") repeat-x;
@@ -320,28 +313,28 @@
 .tz-err-tips{
   @include wh(326px,25px,25px);
   margin:0 auto;
-}
 
-.Validform_checktip{
-  display:block;
-
-  &.wrong{
-    background: url("./assets/images/icons/z_err.png") left center no-repeat;
-    background-size:12px 12px;
-    padding-left:18px;
-    color: #fa4a02;
-    font-size:12px;
-  }
-
-  &.suc{
+  .Validform_checktip{
     display:block;
-    position: absolute;
-    top:50%;
-    right:-30px;
-    margin-top:-20px;
-    @include wh(20px,20px);
-    background: url("./assets/images/icons/z_suc.png") center no-repeat;
-    background-size: 20px 20px;
+
+    &.wrong{
+      background: url("./assets/images/icons/z_err.png") left center no-repeat;
+      background-size:12px 12px;
+      padding-left:18px;
+      color: #fa4a02;
+      font-size:12px;
+    }
+
+    &.suc{
+      display:block;
+      position: absolute;
+      top:50%;
+      right:-30px;
+      margin-top:-20px;
+      @include wh(20px,20px);
+      background: url("./assets/images/icons/z_suc.png") center no-repeat;
+      background-size: 20px 20px;
+    }
   }
 }
 
@@ -381,5 +374,41 @@
     padding-right: 60px;
     overflow: hidden;
     margin-bottom:40px;
+  }
+}
+
+/*iview*/
+.tz-date{
+  .ivu-icon-ios-calendar-outline{
+    display:none;
+  }
+  .ivu-input{
+    @include input();
+    width:201px;
+    margin-left:24px;
+    color:#2f220f !important;
+    padding-right:36px;
+    background:#f9f5ef url('./assets/images/icons/c_icon_date.png') right 15px center no-repeat;
+    background-size: 21px 21px;
+  }
+}
+
+.tz-select{
+  .ivu-select-selection{
+    @include input();
+    padding:0;
+    width:201px;
+    margin-left:24px;
+    color:#2f220f !important;
+    padding-right:36px;
+    background-size: 21px 21px;
+  }
+
+  .ivu-select-selection{
+    .ivu-select-placeholder{
+      height:46px;
+      line-height:46px;
+      padding-left:16px;
+    }
   }
 }

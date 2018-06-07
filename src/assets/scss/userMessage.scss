@@ -25,7 +25,6 @@
   }
 
   .phone{margin-left:24px;}
-  .fixed-select{margin-left:25px;@include select-box(201px,48px,48px);}
 
   .btn-rec{
     @include btn-yellow(45px);

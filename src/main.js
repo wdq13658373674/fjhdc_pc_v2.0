@@ -7,9 +7,12 @@ import axios from 'axios'
 import Vuex from 'vuex'
 
 import * as filters from '@/libs/filter'
-import pagination from 'vue_pagination';
 import utils from '@/libs/util.js'
+import pagination from 'vue_pagination';
 import verify from "vue-verify-plugin";
+
+import {DatePicker,Select} from 'iview';
+import 'iview/dist/styles/iview.css';
 
 Vue.config.productionTip = false
 
@@ -24,6 +27,12 @@ axios.interceptors.request.use(function (config) {
 
   return config;
 });
+
+/**
+ * iView
+ * **/
+Vue.component('DatePicker', DatePicker);
+Vue.component('Select', Select);
 
 /**
  * 全局ajax访问域名
@@ -125,6 +134,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  // render: h => h(App)
   components: { App },
   template: '<App/>'
 })

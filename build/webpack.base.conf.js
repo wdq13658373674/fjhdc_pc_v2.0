@@ -39,6 +39,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        include:[
+          '/node_modules/element-ui/lib/'
+        ],
         use: ExtractTextPlugin.extract({
           fallback:"style-loader",
           use:"css-loader"

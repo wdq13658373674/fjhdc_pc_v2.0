@@ -25,6 +25,13 @@
       </div>
     </div>
 
+    <!--
+      total：总条数
+      size：每页显示条目个数不传默认10
+      page：设置默认页码，默认1
+      changge：页码切换方法触发，比如：传入pageFn方法接收page页码
+    -->
+    <pageination :total="pageObj.total" :size="pageObj.per_page" :page="pageObj.current_page" :changge="pageFn" :isUrl="true"></pageination>
   </div>
 </template>
 
@@ -35,7 +42,8 @@
       name: "news",
       data(){
         return {
-          newsList:[]
+          newsList:[],
+          pageObj:{}
         }
       },
       mounted(){
@@ -45,17 +53,32 @@
         /**
          * 获取新闻列表
          * **/
-        async getNewsList(){
+        async getNewsList(page){
           const params={
-            page:1
+            page:page
           }
 
           let res=await postNews(params);
-
           if(res){
             this.newsList=res.ret.data;
+
+            /*分页*/
+            let total=res.ret.total * res.ret.per_page;
+            this.pageObj={
+              total:total,
+              per_page:res.ret.per_page,
+              current_page:res.ret.current_page,
+            }
+
           }
         },
+        /***
+         * 分页
+         * */
+        pageFn(val){
+          this.page = val;
+          this.getNewsList(val);
+        }
       }
     }
 </script>

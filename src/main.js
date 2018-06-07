@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+
 import * as filters from '@/libs/filter'
+import pagination from 'vue_pagination';
 
 Vue.config.productionTip = false
 
@@ -37,6 +39,11 @@ global.IMG_HOST="http://res.2.fjhok.com/res/image/";
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
+
+/**
+ * 分页
+ * **/
+Vue.use(pagination);
 
 /**
  * 路由全局拦截器

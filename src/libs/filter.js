@@ -2,20 +2,31 @@
  * 时间戳转换日期
  * time：时间戳
  * flag：是否显示时分秒（false：不显示，true：显示）
+ * type：类型 1 只显示年,2 只显示月,3只显示日,4只显示时间
  * **/
-let stampToDate=(time,flag)=>{
+let stampToDate=(time,flag,type)=>{
   let date = new Date(time * 1000);
-  let Y = date.getFullYear() + '-';
-  let M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-  let D = (date.getDate()+1 < 10 ? '0'+(date.getDate()+1) : date.getDate()+1) + ' ';
-  let h = date.getHours() + ':';
-  let m = date.getMinutes() + ':';
+  let Y = date.getFullYear();
+  let M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1);
+  let D = (date.getDate()+1 < 10 ? '0'+(date.getDate()+1) : date.getDate()+1);
+  let h = date.getHours();
+  let m = date.getMinutes();
   let s = date.getSeconds();
 
+  if(type==1){
+    return Y;
+  }else if(type==2){
+    return M;
+  }else if(type==3){
+    return D;
+  }else if(type==4){
+    return `${h}:${m}:${s}`;
+  }
+
   if(flag){
-    return Y+M+D+h+m+s;
+    return `${Y}-${M}-${D} ${h}:${m}:${s}`;
   }else{
-    return Y+M+D;
+    return `${Y}-${M}-${D}`;
   }
 }
 

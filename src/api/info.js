@@ -10,6 +10,14 @@ export  async function getIndex() {
 }
 
 /**
+ * 获取项目详情
+ * **/
+export  async function getProjectInfo(params) {
+  let res = await axios.post(global.API_HOST + 'project/ProjectDetails',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
  * 首页文章列表
  * **/
 export  async function getIndexNews() {

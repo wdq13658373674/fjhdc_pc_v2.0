@@ -61,3 +61,33 @@ export async function postVerify(params){
   let res = await axios.post(global.API_HOST+'user_member/sendVerify',qs.stringify(params));
   return res.data[0];
 }
+
+/**
+ * 获取用户信息
+ * params : 接口接收参数
+ * **/
+export async function getUserInfo(params){
+  let res = await axios.post(global.API_HOST+'user_member/index',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
+ * 用户参与项目列表
+ * @param params
+ * @returns {*}
+ */
+export async function getMyProject(params) {
+  let res = await axios.post(global.API_HOST+'project_user/index',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
+ * 获取单条用户信息
+ * @param params
+ * @returns {*}
+ */
+export async function getOneMyProject(params) {
+  let res = await axios.post(global.API_HOST+'project_user/getProjectUser',qs.stringify(params));
+  return res.data[0];
+}
+

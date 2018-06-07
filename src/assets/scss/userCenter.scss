@@ -8,10 +8,10 @@
     @include wh(140px,140px);
     overflow: hidden;
     text-align: center;
-    margin-top:56px;
+    margin-top:72px;
     @include border-radius(5px);
-    @include box-shadow(0 5px 4px 0 rgba(136, 104, 53, 0.41));
-    border: solid 1px #d1a35a;
+    //@include box-shadow(0 5px 4px 0 rgba(136, 104, 53, 0.41));
+    //border: solid 1px #d1a35a;
     img{
       height:100%;
     }

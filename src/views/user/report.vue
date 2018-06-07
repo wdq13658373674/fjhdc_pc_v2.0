@@ -9,28 +9,28 @@
       <!--crumbs-->
       <div class="tz-user-crumbs clearfix">
         <div class="crumbs mt20 pull-right">
-          <a href="#">房计划地产首页 </a> >
-          <a href="#">个人中心 </a> >
-          <span>推荐客户 </span>
+          <a href="/">房计划地产首页 </a> >
+          <a href="/user">个人中心 </a> >
+          <span>详情</span>
         </div>
       </div>
 
       <!--project-container-->
       <div  id="project-sales" class="user-project-container mt20">
         <div class="project-content clearfix">
-          <div class="img pull-left"><img src="@/assets/images/test/house.jpg" alt=""></div>
+          <div class="img pull-left"><img :src="IMG_HOST+info.pro.cover" alt=""></div>
 
           <div class="content pull-right">
-            <h1 class="f20">房计划诚远御府</h1>
+            <h1 class="f20">{{info.pro.title}}</h1>
 
             <ul class="msg-list clearfix">
               <li class="item">
                 <div class="tit">项目总投资（元）</div>
-                <div class="con">2000,000,000.00</div>
+                <div class="con">{{info.pro.max_amount}}</div>
               </li>
               <li class="item">
                 <div class="tit">您的投资额（元）</div>
-                <div class="con">500,000.00</div>
+                <div class="con">{{info.real_amount}}</div>
               </li>
             </ul>
 
@@ -38,27 +38,27 @@
             <ul class="msg-list2 clearfix">
               <li class="item">
                 <div class="tit">地块位置</div>
-                <div class="con">邻水县西部新城三完小旁边</div>
+                <div class="con">{{info.pro.region}}</div>
               </li>
               <li class="item">
                 <div class="tit">容积率</div>
-                <div class="con">2.0</div>
+                <div class="con">{{info.pro.ratio}}</div>
               </li>
               <li class="item">
                 <div class="tit">地块编号</div>
-                <div class="con">A-05</div>
+                <div class="con">{{info.pro.land_code}}</div>
               </li>
               <li class="item">
                 <div class="tit">绿化率</div>
-                <div class="con">45%</div>
+                <div class="con">{{info.pro.green}}</div>
               </li>
               <li class="item">
                 <div class="tit">地块面积</div>
-                <div class="con">100000 <span class="yellow">m<sup>2</sup></span></div>
+                <div class="con">{{info.pro.land_area}} <span class="yellow">m<sup>2</sup></span></div>
               </li>
               <li class="item">
                 <div class="tit">建筑密度</div>
-                <div class="con">55%</div>
+                <div class="con">{{info.pro.built_density}}</div>
               </li>
             </ul>
           </div>
@@ -81,10 +81,36 @@
 
 <script>
   import headers from './header'
+  import { getOneMyProject } from '@/api/info.js'
+
   export default {
     name: "report",
     components: {
       headers,
+    },
+    data(){
+      return {
+        IMG_HOST:global.IMG_HOST || '',
+        info:[]
+      }
+    },
+    mounted(){
+      this.getProject();
+    },
+    methods:{
+      /**
+       * 获取当前用户信息
+       * **/
+      async getProject(){
+        var params={
+          "user_id":1,
+          "id":this.$route.query.id,
+        };
+        let res =await getOneMyProject(params);
+        if(res){
+          this.info=res.ret;
+        }
+      },
     }
   }
 </script>

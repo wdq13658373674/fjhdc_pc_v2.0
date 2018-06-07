@@ -96,8 +96,18 @@
 </template>
 
 <script>
+  import { getOneMyProject } from '@/api/info.js'
+
   export default {
-    name: "sales"
+    name: "sales",
+    data(){
+      return {
+      }
+    },
+    mounted(){
+    },
+    methods:{
+    }
   }
 </script>
 <style lang="scss" >

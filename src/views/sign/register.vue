@@ -9,7 +9,7 @@
           <!--tips-->
           <div class="tz-err-tips">
             <span class="Validform_checktip wrong" v-remind="inputValue.mobile"></span>
-            <span class="Validform_checktip suc"></span>
+            <!--<span class="Validform_checktip suc"  v-show="test(inputValue.mobile)"></span>-->
           </div>
         </div>
 
@@ -18,7 +18,7 @@
           <!--tips-->
           <div class="tz-err-tips">
             <span class="Validform_checktip wrong"  v-remind="inputValue.password"></span>
-            <span class="Validform_checktip suc" v-show="!$verify.$errors.password"></span>
+            <!--<span class="Validform_checktip suc"></span>-->
           </div>
         </div>
 
@@ -27,7 +27,7 @@
           <!--tips-->
           <div class="tz-err-tips">
             <span class="Validform_checktip wrong"  v-remind="inputValue.rpassword"></span>
-            <span class="Validform_checktip suc"></span>
+            <!--<span class="Validform_checktip suc"></span>-->
           </div>
         </div>
 
@@ -39,7 +39,7 @@
           <!--tips-->
           <div class="tz-err-tips">
             <span class="Validform_checktip wrong"  v-remind="inputValue.verification"></span>
-            <span class="Validform_checktip suc"></span>
+            <!--<span class="Validform_checktip suc"></span>-->
           </div>
         </div>
 

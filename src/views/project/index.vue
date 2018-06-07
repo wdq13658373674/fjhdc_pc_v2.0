@@ -70,7 +70,7 @@
          * **/
         async getProjectList(page){
           var params={
-            perPage:1,
+            perPage:12,
             page:page,
           };
           let res =await getIndex(params);

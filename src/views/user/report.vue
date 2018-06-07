@@ -9,8 +9,9 @@
       <!--crumbs-->
       <div class="tz-user-crumbs clearfix">
         <div class="crumbs mt20 pull-right">
-          <a href="/">房计划地产首页 </a> >
-          <a href="/user">个人中心 </a> >
+          <a href="/">房计划地产首页 </a> &gt;
+          <router-link class="about" :to="{name:'User'}">个人中心</router-link> &gt;
+          <router-link class="about" :to="{name:'UserProject'}">参与项目</router-link> &gt;
           <span>详情</span>
         </div>
       </div>
@@ -66,8 +67,8 @@
 
         <!--tab-->
         <div id="project-tab" class="mt60">
-          <router-link :to="{name:'UserSales'}" class="item" :class="{active : $route.name=='UserSales'}">销售报表</router-link>
-          <router-link :to="{name:'UserFinancial'}" class="item" :class="{active : $route.name=='UserFinancial' || $route.name=='UserFinancialDetail'}">财务报表</router-link>
+          <router-link :to="{name:'UserSales',query:{id:info.id,pid:info.project_id}}" class="item" :class="{active : $route.name=='UserSales'}">销售报表</router-link>
+          <router-link :to="{name:'UserFinancial',query:{id:info.id,pid:info.project_id}}" class="item" :class="{active : $route.name=='UserFinancial' || $route.name=='UserFinancialDetail'}">财务报表</router-link>
         </div>
 
         <!--tab-box-->
@@ -82,6 +83,7 @@
 <script>
   import headers from './header'
   import { getOneMyProject } from '@/api/info.js'
+  import {mapState} from 'vuex'
 
   export default {
     name: "report",
@@ -94,6 +96,9 @@
         info:[]
       }
     },
+    computed: {
+      ...mapState(['userInfo'])
+    },
     mounted(){
       this.getProject();
     },
@@ -103,7 +108,7 @@
        * **/
       async getProject(){
         var params={
-          "user_id":1,
+          "user_id":this.userInfo,
           "id":this.$route.query.id,
         };
         let res =await getOneMyProject(params);

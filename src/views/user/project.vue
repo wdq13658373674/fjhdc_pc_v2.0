@@ -2,7 +2,7 @@
   <!--参与项目-->
   <div id="user-project" class="clearfix">
     <router-link class="project clearfix" :to="{name:'UserSales',query:{
-          id:items.id
+          id:items.id,pid:items.project_id
         }}" v-for="(items,index) in projectList" :key="index">
 
       <div class="img pull-left"><img :src="IMG_HOST+items.project_ad.cover" alt=""></div>
@@ -54,6 +54,7 @@
 
 <script>
     import { getMyProject } from '@/api/info.js'
+    import {mapState} from 'vuex'
 
     export default {
       name: "project",
@@ -63,6 +64,9 @@
           projectList:[],
           pageObj:{}
         }
+      },
+      computed: {
+        ...mapState(['userInfo'])
       },
       mounted(){
         this.getMyProject();
@@ -74,11 +78,11 @@
         async getMyProject(page){
           const params={
             page:page,
-            uid:1
+            uid:this.userInfo
           }
 
           let res=await getMyProject(params);
-          if(res){
+          if(res["code"]){
             this.projectList=res.ret.data;
 
             /*分页*/

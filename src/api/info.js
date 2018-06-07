@@ -91,3 +91,42 @@ export async function getOneMyProject(params) {
   return res.data[0];
 }
 
+/**
+ * 个人中心-获取总销售计划
+ * @param params
+ * @returns {*}
+ */
+export async function getProjectPlan(params) {
+  let res = await axios.post(global.API_HOST+'project/getProjectPlan',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
+ * 个人中心-获取总销售计划-详细列表
+ * @param params
+ * @returns {*}
+ */
+export async function getProjectPlanList(params) {
+  let res = await axios.post(global.API_HOST+'project/getProjectPlanInfo',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
+ * 个人中心-财务总报表
+ * @param params
+ * @returns {*}
+ */
+export async function getFinance(params) {
+  let res = await axios.post(global.API_HOST+'project/finance',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
+ * 个人中心-财务总报表单条详情
+ * @param params
+ * @returns {*}
+ */
+export async function getOneFinance(params) {
+  let res = await axios.post(global.API_HOST+'project/getReportInfo',qs.stringify(params));
+  return res.data[0];
+}

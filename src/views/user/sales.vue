@@ -18,36 +18,29 @@
       </thead>
 
       <tbody>
-      <tr>
-        <td>洋房</td>
-        <td>200</td>
-        <td>20</td>
-        <td>0</td>
-        <td>0</td>
-        <td class="link">查看明细</td>
+      <tr v-for="(items,index) in saleCountList">
+        <td>{{items.title}}</td>
+        <td>{{items.room_sum}}</td>
+        <td>{{items.signup_num}}</td>
+        <td>{{items.custom_num}}</td>
+        <td>{{items.contract_num}}</td>
+        <td class="link" v-on:click="showSaleList(items.title,items.id)">查看明细</td>
       </tr>
-      <tr>
-        <td>洋房</td>
-        <td>200</td>
-        <td>20</td>
-        <td>0</td>
-        <td>0</td>
-        <td class="link">查看明细</td>
-      </tr>
+
       <!--合计-->
       <tr class="total">
         <td>合计</td>
-        <td>200</td>
-        <td>20</td>
-        <td>0</td>
-        <td>0</td>
+        <td>{{saleCount.room_sum}}</td>
+        <td>{{saleCount.signup_num}}</td>
+        <td>{{saleCount.custom_num}}</td>
+        <td>{{saleCount.contract_num}}</td>
         <td></td>
       </tr>
       </tbody>
     </table>
 
-    <div class="tz-line-title mt90">
-      <span class="title">洋房月销售情况</span>
+    <div class="tz-line-title mt90" v-if="check">
+      <span class="title">{{build_type}}月销售情况</span>
       <div class="line"></div>
     </div>
     <!--<div class="date-box clearfix">
@@ -61,7 +54,7 @@
         <span class="Validform_checktip ml20"></span>
       </div>
     </div>-->
-    <table class="project-table mt20 mb60">
+    <table class="project-table mt20 mb60" v-if="check">
       <thead>
       <tr>
         <td>日期</td>
@@ -72,23 +65,17 @@
       </thead>
 
       <tbody>
-      <tr>
-        <td>2017年3月</td>
-        <td>200</td>
-        <td>450</td>
-        <td>24%</td>
-      </tr>
-      <tr>
-        <td>2017年3月</td>
-        <td>200</td>
-        <td>450</td>
-        <td>24%</td>
+      <tr v-for="(items,index) in saleList">
+        <td>{{items.year}}年{{items.month}}月</td>
+        <td>{{items.signup_num}}</td>
+        <td>{{items.custom_num}}</td>
+        <td>{{items.contract_num}}</td>
       </tr>
       <tr class="total">
         <td>合  计</td>
-        <td>1500</td>
-        <td>0</td>
-        <td>0</td>
+        <td>{{saleCount.signup_num | formatMoney}}</td>
+        <td>{{saleCount.custom_num}}</td>
+        <td>{{saleCount.contract_num}}</td>
       </tr>
       </tbody>
     </table>
@@ -96,17 +83,76 @@
 </template>
 
 <script>
-  import { getOneMyProject } from '@/api/info.js'
+  import { getProjectPlan,getProjectPlanList } from '@/api/info.js'
 
   export default {
     name: "sales",
     data(){
       return {
+        pid: this.$route.query.pid,
+        saleCountList: [],
+        saleList: [],
+        saleCount: {
+          room_sum: 0,
+          signup_num: 0,
+          custom_num: 0,
+          contract_num: 0
+        },
+        check: false,
+        build_type: "",
       }
     },
     mounted(){
+      this.getCount();
     },
-    methods:{
+    methods: {
+      /**
+       * 获取总销售数据
+       * **/
+      async getCount(){
+        var params = {
+          "project_id": this.pid
+        };
+        let res = await getProjectPlan(params);
+        if (res["code"]) {
+          this.saleCountList = res.ret;
+
+          this.saleCountSUM();
+        }
+      },
+
+      /**
+       * 获取销售列表
+       * @param title
+       * @param id
+       */
+      async showSaleList(title, id) {
+        this.check = true;
+        this.build_type = title;
+
+        var params = {
+          "type_id":id
+        };
+        let res = await getProjectPlanList(params);
+        if (res["code"]) {
+          this.saleList = res.ret;
+        }
+      },
+
+      /**
+       * 计算总销售数据
+       */
+      saleCountSUM: function () {
+        var that = this;
+        this.saleCountList.find(item=> {
+          that.saleCount.room_sum += item.room_sum;
+          that.saleCount.signup_num += item.signup_num;
+          that.saleCount.custom_num += item.custom_num;
+          that.saleCount.contract_num += item.contract_num;
+        });
+      },
+
+
     }
   }
 </script>

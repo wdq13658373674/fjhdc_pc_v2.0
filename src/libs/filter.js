@@ -39,4 +39,25 @@ let formatMobile=(mobile)=> {
   return new_mobile
 }
 
-export {stampToDate,formatCards,formatMobile}
+/**
+ * 格式化金额
+ * @param number 金额
+ * @param places 小数点位数
+ * @param symbol 金额前面符号
+ * @param thousand 金额隔离符号
+ * @param decimal  小数点符号
+ * @returns {string}
+ */
+let formatMoney=(number,places=2, symbol="", thousand=",", decimal=".")=>{
+  number = number || 0;
+  places = !isNaN(places = Math.abs(places)) ? places : 2;
+  symbol = symbol !== undefined ? symbol : "$";
+  thousand = thousand || ",";
+  decimal = decimal || ".";
+  var negative = number < 0 ? "-" : "",
+    i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+    j = (j = i.length) > 3 ? j % 3 : 0;
+  return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+};
+
+export {stampToDate,formatCards,formatMobile,formatMoney}

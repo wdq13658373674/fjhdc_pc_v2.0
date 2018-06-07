@@ -19,6 +19,7 @@
 
 <script>
 import { getUserInfo } from '@/api/info.js'
+import {mapState} from 'vuex'
 
 export default {
   name: "user",
@@ -26,6 +27,9 @@ export default {
     return {
       info:[]
     }
+  },
+  computed: {
+    ...mapState(['userInfo'])
   },
   mounted(){
     this.getUserInfo();
@@ -36,7 +40,7 @@ export default {
      * **/
     async getUserInfo(){
       var params={
-        "uid":2
+        "uid":this.userInfo
       };
       let res =await getUserInfo(params);
 

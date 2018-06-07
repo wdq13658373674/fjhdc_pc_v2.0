@@ -1,2 +1,111 @@
 @import "core/import";
 
+.tz-about-container{
+  min-width:1403px;
+  .item{
+    .content{
+      width:1403px;
+      margin:0 auto;
+
+      .con{
+        margin-top:50px;
+        font-size:24px;
+        line-height:44px;
+        p{
+          text-indent: 2em;
+        }
+      }
+
+      .half-con{
+        .con{
+          width:642px;
+          font-size:18px;
+          line-height:38px;
+        }
+      }
+    }
+  }
+
+  .item1{
+    @include wh(auto,991px);
+    background: url($host+"images/about/about1.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+
+  .item2{
+    h1{
+      margin-top:35px;
+    }
+  }
+
+  .item3{
+    @include wh(auto,1051px);
+    background: url($host+"images/about/about2.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+
+  .item4{
+
+  }
+
+  .item5{
+    @include wh(auto,925px);
+    background: url($host+"images/about/about4.jpg") top center no-repeat;
+    background-size: auto 100%;
+
+    .half-con{
+      margin-top:350px;
+    }
+  }
+
+  .item6{
+    @include wh(auto,711px);
+    background: url($host+"images/about/about6.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item7{
+    @include wh(auto,681px);
+    background: url($host+"images/about/about7.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item8{
+    @include wh(auto,783px);
+    background: url($host+"images/about/about8.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item9{
+    @include wh(auto,609px);
+    background: url($host+"images/about/about9.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item10{
+    @include wh(auto,834px);
+    background: url($host+"images/about/about10.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item11{
+    @include wh(auto,821px);
+    background: url($host+"images/about/about12.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item12{
+    @include wh(auto,834px);
+    background: url($host+"images/about/about13.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item13{
+    @include wh(auto,823px);
+    background: url($host+"images/about/about14.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item14{
+    @include wh(auto,753px);
+    background: url($host+"images/about/about15.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+  .item15{
+    @include wh(auto,999px);
+    background: url($host+"images/about/about16.jpg") top center no-repeat;
+    background-size: auto 100%;
+  }
+}

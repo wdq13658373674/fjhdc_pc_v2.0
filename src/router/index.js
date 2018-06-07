@@ -62,8 +62,6 @@ export default new Router({
       name: 'About',
       components: {
         default: About,
-        header: Header,
-        footer: Footer,
       }
     },
     {

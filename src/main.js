@@ -11,7 +11,7 @@ import utils from '@/libs/util.js'
 import pagination from 'vue_pagination';
 import verify from "vue-verify-plugin";
 
-import {DatePicker,Select} from 'iview';
+import {DatePicker,Select,Option,Message} from 'iview';
 import 'iview/dist/styles/iview.css';
 
 Vue.config.productionTip = false
@@ -33,7 +33,8 @@ axios.interceptors.request.use(function (config) {
  * **/
 Vue.component('DatePicker', DatePicker);
 Vue.component('Select', Select);
-
+Vue.component('Option', Option);
+Vue.prototype.$message = Message;
 /**
  * 全局ajax访问域名
  * **/

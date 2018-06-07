@@ -316,28 +316,27 @@
 .tz-err-tips{
   @include wh(326px,25px,25px);
   margin:0 auto;
+}
+.Validform_checktip{
+  display:inline-block;
 
-  .Validform_checktip{
+  &.wrong{
+    background: url("./assets/images/icons/z_err.png") left center no-repeat;
+    background-size:12px 12px;
+    padding-left:18px;
+    color: #fa4a02;
+    font-size:12px;
+  }
+
+  &.suc{
     display:block;
-
-    &.wrong{
-      background: url("./assets/images/icons/z_err.png") left center no-repeat;
-      background-size:12px 12px;
-      padding-left:18px;
-      color: #fa4a02;
-      font-size:12px;
-    }
-
-    &.suc{
-      display:block;
-      position: absolute;
-      top:50%;
-      right:-30px;
-      margin-top:-20px;
-      @include wh(20px,20px);
-      background: url("./assets/images/icons/z_suc.png") center no-repeat;
-      background-size: 20px 20px;
-    }
+    position: absolute;
+    top:50%;
+    right:-30px;
+    margin-top:-20px;
+    @include wh(20px,20px);
+    background: url("./assets/images/icons/z_suc.png") center no-repeat;
+    background-size: 20px 20px;
   }
 }
 
@@ -411,6 +410,10 @@
     .ivu-select-placeholder{
       height:46px;
       line-height:46px;
+      padding-left:16px;
+    }
+    .ivu-select-selected-value{
+      @include wh(100%,46px,46px);
       padding-left:16px;
     }
   }

@@ -100,6 +100,16 @@ export async function getOneMyProject(params) {
 }
 
 /**
+ * 个人中心-修改资料
+ * @param params
+ * @returns {*}
+ */
+export async function postUserMessage(params) {
+  let res = await axios.post(global.API_HOST+'user_member/PersonalAdd',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
  * 个人中心-获取总销售计划
  * @param params
  * @returns {*}

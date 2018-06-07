@@ -21,21 +21,28 @@
 
       <div class="input-group">
         <label class="label">会员昵称</label>
-        <input class="input" :value="info.nickname" type="text" placeholder="请输入昵称">
+        <input class="input" v-model="info.nickname" v-verify="info.nickname" type="text" placeholder="请输入昵称">
+        <!--tips-->
+        <span class="Validform_checktip wrong" v-remind="info.nickname"></span>
       </div>
+
       <div class="input-group clearfix">
         <label class="label pull-left">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</label>
         <Select v-model="info.sex" style="width:201px" class="tz-select">
-          <Option v-for="item in sexList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          <Option v-for="item in sexList" :value="item.value" >{{ item.label }}</Option>
         </Select>
       </div>
+
       <div class="input-group">
         <label class="label">出生日期</label>
-        <DatePicker type="date" :clearable="false" :editable="false" :value="info.birthday" placeholder="Select date" class="tz-date"></DatePicker>
+        <DatePicker type="date" :clearable="false" :editable="false" :value="info.birthday" @on-change="birthChange" placeholder="请选择" class="tz-date"></DatePicker>
       </div>
+
       <div class="input-group">
         <label class="label">联系地址</label>
-        <input class="input w326" type="text" placeholder="请输入联系地址" :value="info.address">
+        <input class="input w326" type="text" placeholder="请输入联系地址" v-model="info.address"   v-verify="info.address">
+        <!--tips-->
+        <span class="Validform_checktip wrong" v-remind="info.address"></span>
       </div>
 
       <div class="user-hr mt40"></div>
@@ -48,27 +55,36 @@
 
 <script>
   import {mapMutations} from 'vuex'
-  import { getUserInfo } from '@/api/info.js'
+  import { getUserInfo , postUserMessage} from '@/api/info.js'
 
     export default {
       name: "message",
       data(){
         return {
-          info:[],
+          info:{
+            nickname:'',
+            address:'',
+          },
           sexList:[
             {
-              value: 'New York',
-              label: 'New York'
+              value: 0,
+              label: '女'
             },
             {
-              value: 'London',
-              label: 'London'
+              value: 1,
+              label: '男'
             },
           ],
         }
       },
-      components:{
-
+      /**
+       * 表单验证
+       * **/
+      verify: {
+        info: {
+          nickname: ["required"],
+          address:["required"]
+        }
       },
       mounted(){
         this.getUserInfo();
@@ -90,15 +106,25 @@
           }
         },
         /**
-         * 表单提交
+         * 表单提交(修改资料)
          * **/
         async submit(){
-          var params=this.info;
-          let res =await getUserInfo(params);
+          if(this.$verify.check()){
+            var params=this.info;
+            let res =await postUserMessage(params);
 
-          if(res){
-
+            if(res.code==0){
+              this.$message.warning('你没有修改');
+            }else{
+              this.$message.success('修改成功');
+            }
           }
+        },
+        /**
+         * 生日改变
+         * **/
+        birthChange(val){
+          this.info.birthday=val;
         },
         /**
          * 退出

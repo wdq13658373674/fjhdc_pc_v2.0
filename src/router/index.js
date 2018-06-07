@@ -111,21 +111,33 @@ export default new Router({
         {
           path: '/user',
           name: 'User',
+          meta: {
+            requireAuth: true,
+          },
           component: User
         },
         {
           path: '/user/project',
           name: 'UserProject',
+          meta: {
+            requireAuth: true,
+          },
           component: UserProject
         },
         {
           path: '/user/message',
           name: 'UserMessage',
+          meta: {
+            requireAuth: true,
+          },
           component: UserMessage
         },
         {
           path: '/user/recommend',
           name: 'UserRecommend',
+          meta: {
+            requireAuth: true,
+          },
           component: UserRecommend
         },
       ]
@@ -141,16 +153,25 @@ export default new Router({
         {
           path: '/user/sales',
           name: 'UserSales',
+          meta: {
+            requireAuth: true,
+          },
           component: UserSales
         },
         {
           path: '/user/financial',
           name: 'UserFinancial',
+          meta: {
+            requireAuth: true,
+          },
           component: UserFinancial
         },
         {
           path: '/user/financial/detail',
           name: 'UserFinancialDetail',
+          meta: {
+            requireAuth: true,
+          },
           component: UserFinancialDetail
         },
       ]

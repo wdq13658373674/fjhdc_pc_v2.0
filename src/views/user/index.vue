@@ -9,7 +9,7 @@
       <li class="item mt20 clearfix">
         <span class="yellow-light3 pull-left">上次登录时间&nbsp;</span>
         <span class="pull-left"> &nbsp;{{info.last_login_time}}&nbsp;</span>
-        <a class="btn-edit pull-right" href="">编   辑</a>
+        <router-link class="btn-edit pull-right" :to="{name:'UserMessage'}">编辑个人资料</router-link>
       </li>
     </ul>
 

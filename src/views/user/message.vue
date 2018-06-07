@@ -7,7 +7,7 @@
       <li class="item yellow-light f30 mt10">{{info.mobile}}</li>
       <li class="item f16">欢迎您！</li>
       <li class="item mt20 clearfix">
-        <a class="btn-edit pull-right" href="">退出登陆</a>
+        <span class="btn-edit pull-right" @click="exit()">退出登陆</span>
       </li>
     </ul>
 
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+  import {mapMutations} from 'vuex'
     import { getUserInfo } from '@/api/info.js'
 
     export default {
@@ -87,6 +88,14 @@
             this.info=res.ret;
           }
         },
+        /**
+         * 退出
+         * **/
+        ...mapMutations(['update_userInfo']),
+        exit(){
+          this.update_userInfo('');
+          this.$router.push('/');
+        }
       }
     }
 </script>

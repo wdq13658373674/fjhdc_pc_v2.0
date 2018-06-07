@@ -73,15 +73,15 @@
               content:res.desc
             });
           }else {
-            this.$Message({
+            /*this.$Message({
               type:"success",
               content:'登陆成功'
-            })
+            })*/
 
+            this.update_userInfo(res.ret);
             this.$router.push({
               name:'User'
             });
-            this.update_userInfo(res.ret);
           }
         }
       },

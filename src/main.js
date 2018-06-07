@@ -86,7 +86,7 @@ Vue.use(Vuex);
 const storeJs=require('storejs');
 const store = new Vuex.Store({
   state:{
-    token:storeJs('token') ? storeJs('token') : {},//token值
+    userInfo:storeJs('userInfo') ? storeJs('userInfo') : '',//userInfo
   },
   mutations:{
     /**

@@ -19,7 +19,7 @@ $inputNormalColor:          #f9f5ef #a0917a #f4efe8!default; //背景，字体�
 }
 
 @mixin input-size($height:nth($inputNormalSize,1),$padding:nth($inputNormalSize,2), $fontSize:nth($inputNormalSize,3),$radus:nth($inputNormalSize,4)){
-  padding:$padding;
+  padding:0 $padding;
   @include wh(100%,$height,$height - $padding*2);
   @include border-radius($radus);
 }

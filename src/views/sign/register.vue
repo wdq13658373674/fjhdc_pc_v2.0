@@ -1,9 +1,9 @@
 <template>
   <div class="form-wrap">
-    <a class="logo mt180" href="#"><img src="@/assets/images/public/logo.png" alt=""></a>
+    <div class="form-box" style="margin-top:240px;">
+      <a class="logo mt40" href="/"><img src="@/assets/images/public/logo2.png" alt=""></a>
 
-    <div class="form-box">
-      <form class="form mt40" action="" id="regForm"  @submit="submit">
+      <form class="form mt60" action="" id="regForm"  @submit="submit">
         <div class="input-group">
           <div>
             <input class="icon-input phone" type="tel" v-model="inputValue.mobile" autocomplete="off"  placeholder="请输入手机号">

@@ -222,6 +222,24 @@
       @include wh(auto,68px,68px);
       font-size:50px;
     }
+
+    .p4{
+      margin-top:30px;
+      color:$yellow;
+    }
+  }
+
+  .footer-menu{
+    color:$yellow;
+    margin-top:180px;
+    a{
+      &:hover{
+        color:$yellow-light4;
+      }
+    }
+    span{
+      margin:0 28px;
+    }
   }
 }
 

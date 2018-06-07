@@ -63,7 +63,7 @@
     }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
   $host:'../../assets/';
   @import "../../assets/scss/userMessage";
 </style>

@@ -1,0 +1,54 @@
+@import "core/import";
+
+/*推荐客户*/
+#user-recommend{
+  margin: 0 30px;
+
+  .input-group{
+    .label{
+      margin-left:202px;
+    }
+    .input{
+      @include input();
+      width:326px;
+      margin-left:15px;
+    }
+  }
+
+  .btn-rec{
+    @include btn-yellow(45px);
+    width:237px;
+    margin:40px auto;
+  }
+
+  .title{
+    font-size:16px;
+    margin-top:26px;
+    color:$yellow;
+  }
+
+  .table{
+    margin-top:23px;
+
+    tbody{
+      >tr>td{
+        @include wh(auto,50px,50px);
+        color:#2f220f;
+        padding-left:30px;
+      }
+
+      .edit-box{
+        text-align: right;
+      }
+      .edits{
+        color:$yellow-light;
+        margin-right:15px;
+      }
+
+      .rec{
+        color:#fa4a02;
+      }
+    }
+    @include zebra-stripe();
+  }
+}

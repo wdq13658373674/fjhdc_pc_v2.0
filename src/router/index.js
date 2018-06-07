@@ -27,6 +27,7 @@ import UserLayout from '@/views/user/layout'
 import User from '@/views/user/index'
 import UserProject from '@/views/user/project'
 import UserMessage from '@/views/user/message'
+import UserRecommend from '@/views/user/recommend'
 
 /**个人中心-参与项目**/
 import UserReport from '@/views/user/report'
@@ -121,6 +122,11 @@ export default new Router({
           path: '/user/message',
           name: 'UserMessage',
           component: UserMessage
+        },
+        {
+          path: '/user/recommend',
+          name: 'UserRecommend',
+          component: UserRecommend
         },
       ]
     },

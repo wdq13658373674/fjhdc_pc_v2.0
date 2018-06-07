@@ -42,7 +42,7 @@
             page：设置默认页码，默认1
             changge：页码切换方法触发，比如：传入pageFn方法接收page页码
           -->
-      <pageination :total="pageObj.total" :size="pageObj.per_page" :page="pageObj.current_page" :changge="pageFn" :isUrl="true"></pageination>
+      <pageination class="page" :total="pageObj.total" :size="pageObj.per_page" :page="pageObj.current_page" :changge="pageFn" :isUrl="true"></pageination>
     </div>
 
 

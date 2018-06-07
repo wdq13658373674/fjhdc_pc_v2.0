@@ -420,48 +420,51 @@
 }
 
 /*分页*/
-  .pageination_align{
-    text-align: center
-  }
-  .pageination {
-    color: #48576a;
-    font-size: 12px;
-    display: inline-block;
-    user-select: none;
+  .page{
+    &.pageination_align{
+      text-align: center;
+
+      .pageination {
+        color: #48576a;
+        font-size: 12px;
+        display: inline-block;
+        user-select: none;
+
+        .pagination_page {
+          border: 1px solid #e1dad0;
+          background: #fff;
+          font-size: 13px;
+          min-width: 30px;
+          height: 30px;
+          line-height: 28px;
+          cursor: pointer;
+          box-sizing: border-box;
+          text-align: center;
+          float: left;
+          margin:0 5px;
+
+          &:hover {
+            cursor: default;
+            background-color: #f9f5ef;
+            border-color:#cbbfaa;
+          }
+          &.disabled {
+            color: gray !important;
+            background-color: #fff;
+            cursor: not-allowed;
+          }
+          &.pagination_page_active {
+            color: #d1a35a !important;
+            border-color:#d1a35a;
+          }
+        }
+        .pagination_page_right,.pagination_page_left{
+          border-right: 1px solid #d1dbe5;
+          padding:0 10px;
+        }
+      }
+    }
+
+
   }
 
-  .pagination_page {
-    border: 1px solid #e1dad0;
-    background: #fff;
-    font-size: 13px;
-    min-width: 30px;
-    height: 30px;
-    line-height: 28px;
-    cursor: pointer;
-    box-sizing: border-box;
-    text-align: center;
-    float: left;
-    margin:0 5px;
-  }
-
-  .pagination_page_right,.pagination_page_left{
-    border-right: 1px solid #d1dbe5;
-    padding:0 10px;
-  }
-
-  .pagination_page:hover {
-    cursor: default;
-    background-color: #f9f5ef;
-    border-color:#cbbfaa;
-  }
-
-  .disabled {
-    color: gray !important;
-    background-color: #fff;
-    cursor: not-allowed;
-  }
-
-  .pagination_page_active {
-    color: #d1a35a;
-    border-color:#d1a35a;
-  }

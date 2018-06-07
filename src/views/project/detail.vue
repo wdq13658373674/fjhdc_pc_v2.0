@@ -273,11 +273,14 @@
             "project_id":this.$route.query.id
           };
           let res =await getProjectInfo(params);
-
-          console.log(res);
-
           if(res){
             this.info=res.ret;
+            console.log(res.ret);
+            if(this.info.support==null){
+              this.info.support={
+                picture:""
+              };
+            }
           }
         },
 

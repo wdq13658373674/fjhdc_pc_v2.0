@@ -249,6 +249,8 @@
 
 <script>
     import { getProjectInfo } from '@/api/info.js'
+    import Swiper from 'swiper'
+    import 'swiper/dist/css/swiper.min.css'
 
     export default {
       name: "index",
@@ -260,6 +262,7 @@
       },
       mounted(){
         this.getInfo();
+        this.setSwiper();
       },
       methods:{
         /**
@@ -277,6 +280,25 @@
             this.info=res.ret;
           }
         },
+
+        /**
+         * 设置幻灯片
+         */
+        setSwiper:function () {
+          setTimeout(function () {
+            var s =  new Swiper('#gallery', {
+              prevText: '',
+              nextText: '',
+              directionNav: false,
+              slideshowSpeed: 4000,
+              animationSpeed: 400,
+              touch: true
+            });
+          }, 100)
+        },
+
+
+
       }
     }
 </script>

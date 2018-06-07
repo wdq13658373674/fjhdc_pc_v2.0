@@ -11,6 +11,9 @@ import Index from '@/views/home'
 /**关于我们**/
 import About from '@/views/about'
 
+/**项目首页**/
+import ProjectIndex from '@/views/project/index'
+
 /**项目详情**/
 import ProjectDetail from '@/views/project/detail'
 
@@ -59,6 +62,15 @@ export default new Router({
       name: 'About',
       components: {
         default: About,
+        header: Header,
+        footer: Footer,
+      }
+    },
+    {
+      path: '/project/index',
+      name: 'ProjectIndex',
+      components: {
+        default: ProjectIndex,
         header: Header,
         footer: Footer,
       }

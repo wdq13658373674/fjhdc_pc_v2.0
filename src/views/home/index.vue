@@ -46,7 +46,7 @@
     <div class="tz-pro-title">
       <span class="span1">管理项目</span>
       <span class="span2">MANAGEMENT ITEM</span>
-      <router-link class="link" :to="{name:'News'}">+ MORE</router-link>
+      <router-link class="link" :to="{name:'ProjectIndex'}">+ MORE</router-link>
     </div>
     <div class="tz-index-project">
       <div class="project-list clearfix">

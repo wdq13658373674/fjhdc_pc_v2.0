@@ -4,8 +4,8 @@ const qs=require("querystring");
 /**
  * 首页获取项目列表
  * **/
-export  async function getIndex() {
-  let res = await axios.get(global.API_HOST+'project/index');
+export  async function getIndex(params) {
+  let res = await axios.post(global.API_HOST + 'project/index',qs.stringify(params));
   return res.data[0];
 }
 

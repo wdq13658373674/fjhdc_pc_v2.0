@@ -317,109 +317,11 @@
   background: url("./assets/images/icons/z_vr.png") repeat-x;
 }
 
-.page-box{
-  text-align: center;
+.tz-err-tips{
+  @include wh(326px,25px,25px);
+  margin:0 auto;
 }
 
-.layui-laypage-own{
-  a{
-    margin-right:8px;
-    @include wh(30px,30px,30px);
-    padding:0;
-    text-align: center;
-    @extend %inline-block;
-    border: solid 1px #e1dad0;
-
-
-    &:hover{
-      background-color: #f9f5ef;
-      color:$black;
-    }
-  }
-
-  .layui-laypage-curr,.layui-laypage-spr{
-    @extend %inline-block;
-    margin:-7px 8px 0px 0px;
-    @include wh(30px,30px,30px);
-    padding:0;
-    text-align: center;
-
-    .layui-laypage-em{
-      background-color: #fff;
-      padding:0;
-    }
-    em{
-      color:$yellow-light;
-      font-style: normal;
-    }
-  }
-
-  .layui-laypage-curr{
-    border: solid 1px $yellow-light;
-  }
-
-  .layui-laypage-last{
-    width:67px;
-  }
-
-  .layui-laypage-prev,.layui-laypage-next{
-    width:50px;
-  }
-}
-
-.layui-layer{
-  &.mod-modal{
-    @include border-radius(5px);
-    overflow: hidden;
-
-    .layui-layer-btn{
-      background: #fff;
-
-      .layui-layer-btn0{
-        @include btn-yellow(45px);
-        width:417px;
-        margin:0 auto 51px;
-      }
-    }
-
-    .layui-layer-content{
-      padding:104px 0 56px;
-    }
-
-    .layui-layer-close2{
-      top:0;
-      right:0;
-    }
-  }
-
-  .mod-del{
-    color: #886835;
-    text-align: center;
-    font-size:20px;
-  }
-
-  &.mod-tip{
-    margin-left:-74px;
-    .layui-layer-content{
-      color:$black;
-      font-size:14px;
-      padding:15px 5px;
-      text-align: center;
-      border: solid 1px #cbbfaa;
-      @include border-radius(5px);
-      @include box-shadow(0 5px 4px 0 rgba(136, 104, 53, 0.28))
-    }
-
-    i.layui-layer-TipsT{
-      left:50%;
-      margin-left:-8px;
-    }
-  }
-}
-
-#Validform_msg{
-  display:none;
-}
 .Validform_checktip{
   display:block;
 
@@ -445,7 +347,6 @@
   }
 }
 
-
 .tz-empty{
   margin-top: 20px;
   padding: 100px 10px;
@@ -454,24 +355,6 @@
   font-size: 16px;
   color: #886835;
   font-weight: 300;
-}
-
-.layui-scoll-load {
-  height: 50px;
-  display: block;
-  background: url("./assets/images/icons/loading.gif") center no-repeat;
-}
-
-.layui-flow-more {
-  margin: 10px 0;
-  text-align: center;
-  color: #999;
-  font-size: 14px;
-}
-
-.layui-flow-more > a {
-  display: block;
-  color: $black;
 }
 
 /*注册协议*/

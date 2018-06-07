@@ -7,6 +7,8 @@ import axios from 'axios'
 
 import * as filters from '@/libs/filter'
 import pagination from 'vue_pagination';
+import utils from '@/libs/util.js'
+import verify from "vue-verify-plugin";
 
 Vue.config.productionTip = false
 
@@ -41,9 +43,21 @@ Object.keys(filters).forEach(key => {
 })
 
 /**
+ * 全局工具函数
+ * **/
+Vue.prototype.$utils = utils;
+
+/**
  * 分页
  * **/
 Vue.use(pagination);
+
+/**
+ * 表单验证
+ * **/
+Vue.use(verify,{
+  blur:true
+});
 
 /**
  * 路由全局拦截器

@@ -5,13 +5,18 @@
 
       <form class="form mt60" id="logForm" @submit="submit">
         <div class="input-group">
-          <input class="icon-input user" type="text" v-model="inputValue.mobile" autocomplete="off" placeholder="请输入手机号">
+          <input class="icon-input user" type="text" v-model="inputValue.mobile" v-verify="inputValue.mobile" autocomplete="off" placeholder="请输入手机号">
         </div>
         <div class="input-group mt20">
           <input class="icon-input pas" type="password" v-model="inputValue.password" autocomplete="off" placeholder="请输入密码">
         </div>
 
-        <input type="submit" class="btn-submit mt20" value="登陆">
+        <!--tips-->
+        <div class="tz-err-tips">
+          <span class="Validform_checktip Validform_wrong" v-remind="inputValue.mobile"></span>
+        </div>
+
+        <input type="submit" class="btn-submit" value="登陆">
 
         <div class="link clearfix">
           <a class="yellow-light pull-left" href="#">忘记密码 ></a>
@@ -30,7 +35,13 @@
     name: "login",
     data() {
       return {
-        inputValue: {}
+        inputValue: {},
+        tips:''
+      }
+    },
+    verify: {
+      inputValue: {
+        mobile: ["required","mobile"]
       }
     },
     methods: {
@@ -38,12 +49,20 @@
        * 登陆提交
        * **/
       async submit(){
-        const params=this.inputValue;
+        this.checkForm();
+
+        /*const params=this.inputValue;
         let res=await postLogin(params);
 
         if(res){
           console.log(res);
-        }
+        }*/
+      },
+      /**
+       * 登陆验证
+       * **/
+      checkForm(){
+        console.log(this.$verify.check());
       }
     }
   }

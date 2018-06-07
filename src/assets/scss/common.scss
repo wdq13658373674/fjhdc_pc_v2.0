@@ -78,6 +78,7 @@
     @extend %main-width;
     margin-top:40px;
 
+    .before{margin-top: 5px; margin-right: 30px}
     .before>{
       a{
         color:#fff;
@@ -87,25 +88,27 @@
           color:$yellow-light;
         }
       }
+    }
+    .about{
+      @extend %inline-block;
+      @include wh(auto,30px,30px);
+      @include border-radius(15px);
+      border:1px solid $yellow-light4;
+      text-align: center;
+      padding:0 20px;
+      color:#fff;
+      float: right;
 
-      .about{
-        @extend %inline-block;
-        @include wh(auto,30px,30px);
-        @include border-radius(15px);
-        border:1px solid $yellow-light4;
-        text-align: center;
-        padding:0 20px;
-
-        &:hover{
-          background:$yellow-light4;
-          color:#fff;
-        }
+      &:hover{
+        background:$yellow-light4;
+        color:#fff;
       }
     }
 
     .after{
       cursor: pointer;
       @include wh(131px,56px,56px);
+      margin-top: -12px;
       background: url("./assets/images/icons/h_u.png") center no-repeat;
       background-size: 32px 32px;
       position: relative;

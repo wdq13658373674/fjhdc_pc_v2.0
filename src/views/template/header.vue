@@ -3,13 +3,14 @@
     <div class="top-box">
       <div class="top clearfix">
         <!--登陆前-->
+        <router-link class="about" :to="{name:'About'}">关于我们</router-link>
         <div class="before pull-right" v-if="!userInfo">
           <router-link :to="{name:'Login'}">登陆</router-link>
           <router-link :to="{name:'Register'}">注册</router-link>
-          <router-link class="about" :to="{name:'About'}">关于我们</router-link>
         </div>
-
         <!--登陆后-->
+
+
         <div class="after pull-right" v-else>
           <div class="menu-box">
             <span class="icon"></span>
@@ -23,6 +24,8 @@
             </ul>
           </div>
         </div>
+
+
       </div>
     </div>
     <div class="nav clearfix">

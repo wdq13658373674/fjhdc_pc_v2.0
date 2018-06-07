@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import Vuex from 'vuex'
 
 import * as filters from '@/libs/filter'
 import pagination from 'vue_pagination';
@@ -55,17 +56,59 @@ Vue.use(pagination);
 /**
  * 表单验证
  * **/
+const myRules={
+  rule:{
+    test:function(val){
+      if(!val) {
+        return false
+      }
+      return true;
+    },
+    message:"请同意协议"
+  }
+
+}
 Vue.use(verify,{
-  blur:true
+  blur:true,
+  rules:myRules
 });
+
+/**
+ * 弹框
+ * **/
+var popbox = require('popbox');
+Vue.use(popbox);
+
+/**
+ * store状态管理
+ * **/
+Vue.use(Vuex);
+const storeJs=require('storejs');
+const store = new Vuex.Store({
+  state:{
+    token:storeJs('token') ? storeJs('token') : {},//token值
+  },
+  mutations:{
+    /**
+     * 更新用户信息
+     * **/
+    update_userInfo(state,userInfo){
+      state.userInfo=userInfo;
+      storeJs.set('userInfo',state.userInfo);
+    },
+  },
+  actions:{
+
+  },
+})
 
 /**
  * 路由全局拦截器
  * **/
 router.beforeEach((to,from,next)=>{
   /**登陆拦截**/
-  /*if (to.meta.requireAuth){
-    if (store.state.userInfo.user_id) {
+  if (to.meta.requireAuth){
+    if (store.state.userInfo) {
       next();
     }else {
       next({
@@ -73,7 +116,7 @@ router.beforeEach((to,from,next)=>{
         query: {redirect: router.currentRoute.fullPath}
       })
     }
-  }*/
+  }
   next()
 })
 
@@ -81,6 +124,7 @@ router.beforeEach((to,from,next)=>{
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

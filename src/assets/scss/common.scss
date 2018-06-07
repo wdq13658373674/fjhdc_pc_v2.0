@@ -325,7 +325,7 @@
 .Validform_checktip{
   display:block;
 
-  &.Validform_wrong{
+  &.wrong{
     background: url("./assets/images/icons/z_err.png") left center no-repeat;
     background-size:12px 12px;
     padding-left:18px;
@@ -334,16 +334,14 @@
   }
 
   &.suc{
-    .Validform_right{
-      display:block;
-      position: absolute;
-      top:50%;
-      right:-30px;
-      margin-top:-10px;
-      @include wh(20px,20px);
-      background: url("./assets/images/icons/z_suc.png") center no-repeat;
-      background-size: 20px 20px;
-    }
+    display:block;
+    position: absolute;
+    top:50%;
+    right:-30px;
+    margin-top:-20px;
+    @include wh(20px,20px);
+    background: url("./assets/images/icons/z_suc.png") center no-repeat;
+    background-size: 20px 20px;
   }
 }
 

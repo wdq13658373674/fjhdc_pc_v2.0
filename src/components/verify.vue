@@ -33,6 +33,9 @@
     methods:{
       /**获取验证码*/
       async getCode(){
+        if(!this.phone || !this.$utils.is_mobile(this.phone)){
+          return false;
+        }
         this.start();
 
         const params={

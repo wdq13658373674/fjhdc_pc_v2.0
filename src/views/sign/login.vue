@@ -1,19 +1,19 @@
 <template>
   <div class="form-wrap">
     <div class="form-box" style="margin-top:333px;">
-      <a class="logo mt40" href="/"><img src="@/assets/images/public/logo2.png" alt=""></a>
+      <router-link class="logo mt40" to="/"><img src="@/assets/images/public/logo2.png" alt=""></router-link>
 
-      <form class="form mt60" id="logForm" @submit="submit">
+      <form class="form mt60" id="logForm" @submit.prevent="submit">
         <div class="input-group">
           <input class="icon-input user" type="text" v-model="inputValue.mobile" v-verify="inputValue.mobile" autocomplete="off" placeholder="请输入手机号">
         </div>
         <div class="input-group mt20">
-          <input class="icon-input pas" type="password" v-model="inputValue.password" autocomplete="off" placeholder="请输入密码">
+          <input class="icon-input pas" type="password" v-model="inputValue.password"  v-verify="inputValue.password" autocomplete="off" placeholder="请输入密码">
         </div>
 
         <!--tips-->
         <div class="tz-err-tips">
-          <span class="Validform_checktip Validform_wrong" v-remind="inputValue.mobile"></span>
+          <span class="Validform_checktip wrong" v-remind="inputValue.mobile"></span>
         </div>
 
         <input type="submit" class="btn-submit" value="登陆">
@@ -29,41 +29,62 @@
 </template>
 
 <script>
+  import {mapMutations} from 'vuex'
   import {postLogin} from '@/api/info.js'
 
   export default {
     name: "login",
     data() {
       return {
-        inputValue: {},
+        inputValue: {
+          mobile:'',
+          password:''
+        },
         tips:''
       }
     },
+    /**
+     * 表单验证
+     * **/
     verify: {
       inputValue: {
-        mobile: ["required","mobile"]
+        mobile: ["required","mobile"],
+        password:["required"]
       }
+    },
+    mounted(){
+
     },
     methods: {
       /**
        * 登陆提交
        * **/
+      ...mapMutations(['update_userInfo']),
       async submit(){
-        this.checkForm();
+        // console.log(this.$verify.$errors);//错误信息
 
-        /*const params=this.inputValue;
-        let res=await postLogin(params);
+        if(this.$verify.check()){
+          const params=this.inputValue;
+          let res=await postLogin(params);
 
-        if(res){
-          console.log(res);
-        }*/
+          if(res.code==0){
+            this.$Message({
+              type:"warning",
+              content:res.desc
+            });
+          }else {
+            this.$Message({
+              type:"success",
+              content:'登陆成功'
+            })
+
+            this.$router.push({
+              name:'User'
+            });
+            this.update_userInfo(res.ret);
+          }
+        }
       },
-      /**
-       * 登陆验证
-       * **/
-      checkForm(){
-        console.log(this.$verify.check());
-      }
     }
   }
 </script>

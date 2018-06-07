@@ -275,7 +275,6 @@
           let res =await getProjectInfo(params);
           if(res){
             this.info=res.ret;
-            console.log(res.ret);
             if(this.info.support==null){
               this.info.support={
                 picture:""

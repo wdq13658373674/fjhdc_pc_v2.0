@@ -3,22 +3,22 @@
     <div class="top-box">
       <div class="top clearfix">
         <!--登陆前-->
-        <div class="before pull-right">
+        <div class="before pull-right" v-if="!userInfo">
           <router-link :to="{name:'Login'}">登陆</router-link>
           <router-link :to="{name:'Register'}">注册</router-link>
           <router-link class="about" :to="{name:'About'}">关于我们</router-link>
         </div>
 
         <!--登陆后-->
-        <div class="after pull-right hide">
+        <div class="after pull-right" v-else>
           <div class="menu-box">
             <span class="icon"></span>
             <ul class="menu-list">
               <li class="item">
-                <a href="#" class="icon ico1">个人中心</a>
+                <router-link :to="{name:'User'}" class="icon ico1">个人中心</router-link>
               </li>
               <li class="item">
-                <a href="#" class="icon ico2">退出</a>
+                <a class="icon ico2" @click.prevent="exit">退出</a>
               </li>
             </ul>
           </div>
@@ -42,7 +42,21 @@
 </template>
 
 <script>
+  import {mapState,mapMutations} from 'vuex'
     export default {
-        name: "header"
+      name: "header",
+      computed:{
+        ...mapState(['userInfo'])
+      },
+      methods:{
+        /**
+         * 退出
+         * **/
+        ...mapMutations(['update_userInfo']),
+        exit(){
+          this.update_userInfo('');
+          this.$router.push('/');
+        }
+      }
     }
 </script>

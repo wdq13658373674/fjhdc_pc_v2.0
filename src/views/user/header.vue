@@ -1,9 +1,9 @@
 <template>
   <header class="tz-user-header min-width">
     <div class="nav clearfix">
-      <a href="#">
+      <router-link to="/">
         <img src="@/assets/images/public/logo3.png" alt="">
-      </a>
+      </router-link>
     </div>
   </header>
 </template>

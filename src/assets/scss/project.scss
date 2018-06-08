@@ -27,7 +27,7 @@
   }
 
   .flash{
-    @include wh(735px,555px);
+    @include wh(735px,450px);
 
     .swiper-container{
       &.gallery-top{
@@ -55,12 +55,12 @@
   }
 
   .msg{
-    @include wh(323px,555px);
+    @include wh(323px,450px);
     overflow: hidden;
     margin-left:36px;
 
     .msg-list{
-      margin-top:30px;
+      margin-top:40px;
       .item{
         @include wh(100%,42px,21px);
         font-size:16px;

@@ -29,7 +29,7 @@
       <div class="input-group clearfix">
         <label class="label pull-left">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</label>
         <Select v-model="info.sex" style="width:201px" class="tz-select">
-          <Option v-for="item in sexList" :value="item.value" >{{ item.label }}</Option>
+          <Option v-for="(item,index) in sexList" :value="item.value" :key="index">{{ item.label }}</Option>
         </Select>
       </div>
 

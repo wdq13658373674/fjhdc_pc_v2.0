@@ -30,7 +30,6 @@ import UserLayout from '@/views/user/layout'
 import User from '@/views/user/index'
 import UserProject from '@/views/user/project'
 import UserMessage from '@/views/user/message'
-import UserRecommend from '@/views/user/recommend'
 
 /**个人中心-参与项目**/
 import UserReport from '@/views/user/report'
@@ -141,15 +140,7 @@ export default new Router({
             requireAuth: true,
           },
           component: UserMessage
-        },
-        {
-          path: '/user/recommend',
-          name: 'UserRecommend',
-          meta: {
-            requireAuth: true,
-          },
-          component: UserRecommend
-        },
+        }
       ]
     },
 

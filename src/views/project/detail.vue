@@ -9,10 +9,13 @@
       <div class="content clearfix">
         <div class="flash pull-left">
           <!-- Swiper start -->
-          <div id="gallery" class="swiper-container gallery-top" style="width:100%;height:450px;background:#fff;">
+          <div id="gallery" class="swiper-container gallery-top tz-swiper" style="width:100%;height:450px;background:#fff;">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="item in info.album" :style="{background:'url('+ IMG_HOST+item.path +') center no-repeat'}" ></div>
             </div>
+
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
           </div>
 
         </div>
@@ -51,23 +54,21 @@
               <div class="con">{{info.built_density}}</div>
             </li>
           </ul>
-          <div class="horizontal-line"></div>
+          <div class="horizontal-line mt10"></div>
         </div>
       </div>
     </div>
 
     <div id="project-tab" class="mt60">
-      <div class="item active">项目介绍</div>
-      <div class="item">周边配套</div>
-      <div class="item">建设进度</div>
+      <div class="item" :class="{active:tabIndex==index}" v-for="(item,index) in tabs" :key="index" @click="tab(index)">{{item}}</div>
     </div>
 
-    <div class="tab-box ">
+    <div class="tab-box" :class="{active:tabIndex==0}">
       <div id="project-box1" class="content mb60" v-html="info.detail_content">
       </div>
     </div>
 
-    <div class="tab-box">
+    <div class="tab-box" :class="{active:tabIndex==1}">
       <div id="project-box2" class="content mb60 clearfix">
         <div class="left-box pull-left">
           <h1>项目区位图</h1>
@@ -89,7 +90,7 @@
       </div>
     </div>
 
-    <div class="tab-box active">
+    <div class="tab-box" :class="{active:tabIndex==2}">
       <div id="project-box3" class="content mb60">
         <!--列表 start-->
         <ul id="proList" class="pro-list clearfix">
@@ -257,7 +258,9 @@
       data(){
         return {
           IMG_HOST:global.IMG_HOST || '',
-          info:[]
+          info:[],
+          tabs:['项目介绍','周边配套','建设进度'],
+          tabIndex:0
         }
       },
       mounted(){
@@ -265,6 +268,12 @@
         this.setSwiper();
       },
       methods:{
+        /**
+         * tab切换
+         * **/
+        tab(index){
+          this.tabIndex=index;
+        },
         /**
          * 获取项目详情
          * **/
@@ -294,13 +303,13 @@
               directionNav: false,
               slideshowSpeed: 4000,
               animationSpeed: 400,
-              touch: true
+              touch: true,
+              pagination: {
+                el: '.swiper-pagination',
+              },
             });
           }, 100)
         },
-
-
-
       }
     }
 </script>

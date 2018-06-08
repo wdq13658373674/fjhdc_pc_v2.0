@@ -420,7 +420,7 @@
 }
 
 /*分页*/
-  .page{
+.page{
     &.pageination_align{
       text-align: center;
 
@@ -467,4 +467,15 @@
 
 
   }
+
+/*swiper*/
+.tz-swiper{
+  .swiper-pagination-bullet-active{
+    background: $yellow-light3;
+  }
+  .swiper-pagination-bullet{
+    @include wh(12px,12px);
+    @include opacity(80);
+  }
+}
 

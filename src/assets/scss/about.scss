@@ -2,6 +2,7 @@
 
 .tz-about-container{
   min-width:1403px;
+  color:#000;
   .item{
     .content{
       width:1403px;
@@ -21,6 +22,41 @@
           width:642px;
           font-size:18px;
           line-height:38px;
+        }
+      }
+
+      .project-con{
+        @include wh(800px,567px);
+        background: #fff;
+        border:1px solid #f5eee0;
+        @include box-shadow(3px 3px 50px 10px #f5eee0);
+        padding:0 42px;
+
+        h1{
+          font-size:44px;
+          margin-top:50px;
+          font-weight: bold;
+        }
+
+        .pro-list{
+          li{
+            font-size:20px;
+            margin-top:10px;
+            .span1{
+              float:left;
+              width:125px;
+              color:#c0c5c7;
+            }
+
+            .span2{
+              display:block;
+              padding-left:125px;
+            }
+          }
+        }
+
+        .data{
+          margin-top:40px;
         }
       }
     }
@@ -62,46 +98,88 @@
     @include wh(auto,711px);
     background: url($host+"images/about/about6.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .half-con{
+      margin-top:150px;
+    }
   }
   .item7{
     @include wh(auto,681px);
     background: url($host+"images/about/about7.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .half-con{
+      margin-top:130px;
+    }
   }
   .item8{
     @include wh(auto,783px);
     background: url($host+"images/about/about8.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .half-con{
+      margin-top:170px;
+    }
+  }
+  .item91{
+    @include wh(auto,155px);
+    background: url($host+"images/about/title3.png") top center no-repeat;
+    background-size: auto 100%;
+    margin-bottom:114px;
   }
   .item9{
     @include wh(auto,609px);
     background: url($host+"images/about/about9.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .half-con{
+      margin-top:350px;
+    }
   }
   .item10{
     @include wh(auto,834px);
     background: url($host+"images/about/about10.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .project-con{
+      margin-top:60px;
+    }
   }
   .item11{
     @include wh(auto,821px);
     background: url($host+"images/about/about12.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .project-con{
+      margin-top:60px;
+    }
   }
   .item12{
     @include wh(auto,834px);
     background: url($host+"images/about/about13.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .project-con{
+      margin-top:60px;
+    }
   }
   .item13{
     @include wh(auto,823px);
     background: url($host+"images/about/about14.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .project-con{
+      margin-top:60px;
+    }
   }
   .item14{
     @include wh(auto,753px);
     background: url($host+"images/about/about15.jpg") top center no-repeat;
     background-size: auto 100%;
+
+    .project-con{
+      margin-top:60px;
+    }
   }
   .item15{
     @include wh(auto,999px);

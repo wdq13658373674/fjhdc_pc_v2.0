@@ -8,7 +8,7 @@
       <!--crumbs-->
       <div class="tz-user-crumbs clearfix">
         <div class="crumbs mt20 pull-right">
-          <a href="#">房计划地产首页 </a> >
+          <router-link to="/">房计划地产首页 </router-link> >
           <span>个人中心 </span>
         </div>
       </div>

@@ -13,7 +13,7 @@
       </div>
 
       <div class="footer-menu pull-right">
-        <router-link :to="{name:'About'}">关于我们</router-link>
+        <router-link target="_blank" :to="{name:'About'}">关于我们</router-link>
         <span>|</span>
         <router-link :to="{name:'News'}">企业动态</router-link>
         <span>|</span>

@@ -68,16 +68,12 @@
           let res=await postLogin(params);
 
           if(res.code==0){
+            // this.$message.warning(res.desc);
             this.$Message({
               type:"warning",
               content:res.desc
             });
           }else {
-            /*this.$Message({
-              type:"success",
-              content:'登陆成功'
-            })*/
-
             this.update_userInfo(res.ret);
             this.$router.push({
               name:'User'

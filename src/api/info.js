@@ -18,6 +18,15 @@ export  async function getProjectInfo(params) {
 }
 
 /**
+ * 获取项目建设进度详情
+ * **/
+export  async function getSchedule(params) {
+  let res = await axios.post(global.API_HOST + 'project/schedule',qs.stringify(params));
+  return res.data[0];
+}
+
+
+/**
  * 首页文章列表
  * **/
 export  async function getIndexNews() {

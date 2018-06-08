@@ -91,10 +91,10 @@
     </div>
 
     <div class="tab-box" :class="{active:tabIndex==2}">
-      <div id="project-box3" class="content mb60">
+      <div id="project-box3" class="content mb60 " :class="{active:schedule==0}" >
         <!--列表 start-->
         <ul id="proList" class="pro-list clearfix">
-          <li class="item" v-for="item in info.schedule">
+          <li class="item" v-for="item in info.schedule" v-on:click="showDetail(item.id)">
             <div class="date pull-left">
               <p class="year">{{item.progress_time | stampToDate(false,1)}}</p>
 
@@ -109,135 +109,36 @@
 
         <!--详情 start-->
         <div class="pro-detail">
-          <div class="back"><a href="javascript:void(0)" onclick="$(this).parents('#project-box3').removeClass('active');">返回>></a></div>
+          <div class="back"><a href="javascript:void(0)"  v-on:click="schedule=1">返回>></a></div>
           <div class="top mt20 clearfix">
-            <div class="top-schedule active">
+            <div class="top-schedule" v-for="(item,key) in scheduleList"  :class="{active:key==imgStatus}">
               <div class="descri pull-left">
-                <div class="title">A-5-1户型</div>
-
+                <div class="title">{{item.title}}</div>
                 <div class="dsc-item">
-                  <span class="tit">户型结构</span>
-                  <span class="con">三室两厅两卫</span>
-                </div>
-                <div class="dsc-item">
-                  <span class="tit">建筑面积</span>
-                  <span class="con">约118 <span class="gray">m<sup>2</sup></span></span>
-                </div>
-                <div class="dsc-item">
-                  <span class="tit">户型描述</span>
-                  <span class="con">约82平米的套二，大小适中，明厨明卫，动静分离。入户花园面积较大，作为入户的过渡空间，较好地保证了室内的私密性</span>
+                  <span class="tit">进度描述</span>
+                  <span class="con" v-html="item.content"></span>
                 </div>
               </div>
               <div class="flash pull-right">
                 <!-- Swiper start -->
-                <div id="gallery0" class="swiper-container gallery-top" style="width:100%;height:386px;border: 1px solid #cbbfaa;background:#fff;">
+                <div :id="'gallery'+key" class="swiper-container gallery-top" style="width:100%;height:511px;border: 1px solid #cbbfaa;background:#fff;">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                  </div>
-                </div>
-                <div class="thumbs-box">
-                  <div id="thumbs0" class="swiper-container gallery-thumbs mt10" style="width:680px;height:115px;background:#fff;">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
-                        <p class="caption">户型图1</p>
-                      </div>
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;">
-                        <p class="caption">户型图2</p>
-                      </div>
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
-                        <p class="caption">户型图3</p>
-                      </div>
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
-                        <p class="caption">户型图4</p>
-                      </div>
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
-                        <p class="caption">户型图5</p>
-                      </div>
-                    </div>
+                    <div class="swiper-slide" v-for="items in item.images" :style="{background:'url('+ IMG_HOST+items.path +') center no-repeat'}" ></div>
                   </div>
 
-                  <!-- Add Arrows -->
-                  <div class="swiper-button-prev2 gallery-btn"> < </div>
-                  <div class="swiper-button-next2 gallery-btn"> > </div>
-                  <!-- Swiper end -->
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
                 </div>
-              </div>
-            </div>
-            <div class="top-schedule">
-              <div class="descri pull-left">
-                <div class="title">A-5-1户型</div>
 
-                <div class="dsc-item">
-                  <span class="tit">户型结构</span>
-                  <span class="con">三室两厅两卫</span>
-                </div>
-                <div class="dsc-item">
-                  <span class="tit">建筑面积</span>
-                  <span class="con">约118 <span class="gray">m<sup>2</sup></span></span>
-                </div>
-                <div class="dsc-item">
-                  <span class="tit">户型描述</span>
-                  <span class="con">约82平米的套二，大小适中，明厨明卫，动静分离。入户花园面积较大，作为入户的过渡空间，较好地保证了室内的私密性</span>
-                </div>
-              </div>
-              <div class="flash pull-right">
-                <!-- Swiper start -->
-                <div id="gallery1" class="swiper-container gallery-top" style="width:100%;height:386px;border: 1px solid #cbbfaa;background:#fff;">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                    <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;"></div>
-                  </div>
-                </div>
-                <div class="thumbs-box">
-                  <div id="thumbs1" class="swiper-container gallery-thumbs mt10" style="width:680px;height:115px;background:#fff;">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
-                        <p class="caption">户型图1</p>
-                      </div>
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.jpg') center no-repeat;">
-                        <p class="caption">户型图2</p>
-                      </div>
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
-                        <p class="caption">户型图3</p>
-                      </div>
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
-                        <p class="caption">户型图4</p>
-                      </div>
-                      <div class="swiper-slide" style="background:url('@/assets/images/test/house.png') center no-repeat;">
-                        <p class="caption">户型图5</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Add Arrows -->
-                  <div class="swiper-button-prev2 gallery-btn"> < </div>
-                  <div class="swiper-button-next2 gallery-btn"> > </div>
-                  <!-- Swiper end -->
-                </div>
               </div>
             </div>
           </div>
 
           <div class="bottom mt30">
             <div class="house-msg-list clearfix">
-              <label class="check-label">
-                <input class="check-input" type="radio" name="type" checked>
-                <div class="msg-item">二室两厅两卫</div>
-              </label>
-              <label class="check-label">
-                <input class="check-input" type="radio" name="type">
-                <div class="msg-item">二室两厅两卫</div>
-              </label>
-              <label class="check-label">
-                <input class="check-input" type="radio" name="type">
-                <div class="msg-item">二室两厅两卫</div>
+              <label class="check-label" v-for="(item,key) in scheduleList" v-on:click="showImgStatus(key)">
+                <input class="check-input" type="radio" name="type" />
+                <div class="msg-item">{{item.title}}</div>
               </label>
             </div>
           </div>
@@ -249,7 +150,7 @@
 </template>
 
 <script>
-    import { getProjectInfo } from '@/api/info.js'
+    import { getProjectInfo,getSchedule } from '@/api/info.js'
     import Swiper from 'swiper'
     import 'swiper/dist/css/swiper.min.css'
 
@@ -260,7 +161,11 @@
           IMG_HOST:global.IMG_HOST || '',
           info:[],
           tabs:['项目介绍','周边配套','建设进度'],
-          tabIndex:0
+          tabIndex:0,
+          schedule:1,
+          project_id:this.$route.query.id,
+          scheduleList:[],
+          imgStatus:0,
         }
       },
       mounted(){
@@ -279,7 +184,7 @@
          * **/
         async getInfo(){
           var params={
-            "project_id":this.$route.query.id
+            "project_id":this.project_id
           };
           let res =await getProjectInfo(params);
           if(res){
@@ -293,6 +198,25 @@
         },
 
         /**
+         * 建设进度详情
+         * @param id
+         */
+        async showDetail(id){
+          this.schedule=0;
+
+          var params={
+            "pid":id,
+            "project_id":this.project_id
+          };
+          let res =await getSchedule(params);
+          if(res){
+            this.scheduleList=res.ret;
+
+            this.showImgStatus(0);
+          }
+        },
+
+        /**
          * 设置幻灯片
          */
         setSwiper:function () {
@@ -300,6 +224,7 @@
             var s =  new Swiper('#gallery', {
               prevText: '',
               nextText: '',
+              autoplay:true,
               directionNav: false,
               slideshowSpeed: 4000,
               animationSpeed: 400,
@@ -308,8 +233,34 @@
                 el: '.swiper-pagination',
               },
             });
-          }, 100)
+          }, 100);
         },
+
+        /**
+         * 切换图片
+         * @param key
+           */
+        showImgStatus:function(key){
+          this.imgStatus=key;
+
+          setTimeout(function () {
+            var i =  new Swiper('#gallery'+key, {
+              prevText: '',
+              nextText: '',
+              autoplay:false,
+              directionNav: false,
+              slideshowSpeed: 4000,
+              animationSpeed: 400,
+              touch: true,
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+            });
+          }, 100)
+        }
+
+
       }
     }
 </script>

@@ -64,16 +64,16 @@
 
             /*分页*/
             let total=res.ret.total * res.ret.per_page;
-            /*this.pageObj={
+            this.pageObj={
               total:total,
               per_page:res.ret.per_page,
               current_page:res.ret.current_page,
-            }*/
-            this.pageObj={
+            }
+            /*this.pageObj={
               total:100,
               per_page:10,
               current_page:1,
-            }
+            }*/
 
           }
         },

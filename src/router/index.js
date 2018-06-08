@@ -13,8 +13,6 @@ import About from '@/views/about'
 
 /**项目首页**/
 import ProjectIndex from '@/views/project/index'
-
-/**项目详情**/
 import ProjectDetail from '@/views/project/detail'
 
 /**登陆注册**/

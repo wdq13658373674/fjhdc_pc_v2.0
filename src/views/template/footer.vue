@@ -13,13 +13,13 @@
       </div>
 
       <div class="footer-menu pull-right">
-        <a href="#">关于我们</a>
+        <router-link target="_blank" :to="{name:'About'}">关于我们</router-link>
         <span>|</span>
-        <a href="#">企业动态</a>
+        <router-link :to="{name:'News'}">企业动态</router-link>
         <span>|</span>
-        <a href="#">管理项目</a>
+        <router-link :to="{name:'ProjectIndex'}">管理项目</router-link>
         <span>|</span>
-        <a href="#">资金出借</a>
+        <router-link to="">资金出借</router-link>
       </div>
     </div>
   </footer>

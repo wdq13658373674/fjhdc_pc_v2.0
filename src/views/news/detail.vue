@@ -5,7 +5,7 @@
 
     <div class="tz-news-detail">
       <div class="crumbs mt40">
-        <a href="#">首页 </a> >
+        <router-link to="/">首页 </router-link> >
         <span>企业动态 </span>
       </div>
 

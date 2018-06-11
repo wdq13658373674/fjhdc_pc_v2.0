@@ -132,7 +132,7 @@
     @include tr-hover();
 
     tr>td{
-      &:first-child,&:last-child{
+      &:first-child,&:last-child a{
         color:#886835;
       }
     }

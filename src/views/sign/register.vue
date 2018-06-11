@@ -50,7 +50,7 @@
               <span class="arc pull-left"></span>
             </div>
           </label>
-          <span class="yellow pull-left">我已同意<a class="blue" href="#">《房计划注册协议》</a>协议</span>
+          <span class="yellow pull-left">我已同意<a class="blue" href="#">《信力达注册协议》</a>协议</span>
         </div>
         <!--tips-->
         <div class="tz-err-tips">

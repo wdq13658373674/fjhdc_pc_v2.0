@@ -2,7 +2,7 @@
   <!--销售报表 start-->
   <div id="project-box1" class="content">
     <div class="tz-line-title mt50">
-      <span class="title">总销售计划</span>
+      <span class="title">销售报表</span>
       <div class="line"></div>
     </div>
     <table class="project-table mt20">

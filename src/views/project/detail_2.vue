@@ -150,140 +150,35 @@
 
     <!--销售报表-->
     <div class="tab-box" :class="{active:tabIndex==3}">
-      <div class="user-project-detail content mb60 ">
-        <div class="tz-line-title mt50">
-          <span class="title">总销售计划</span>
-          <div class="line"></div>
-        </div>
-        <table class="project-table mt20">
-          <thead>
-          <tr>
-            <td>物业类型</td>
-            <td>总数量（套/个）</td>
-            <td>累计报名</td>
-            <td>累计认筹</td>
-            <td>累计签约</td>
-            <td></td>
-          </tr>
-          </thead>
-
-          <tbody>
-          <tr v-for="(items,index) in saleCountList">
-            <td>{{items.title}}</td>
-            <td>{{items.room_sum}}</td>
-            <td>{{items.signup_num}}</td>
-            <td>{{items.custom_num}}</td>
-            <td>{{items.contract_num}}</td>
-            <td class="link" v-on:click="showSaleList(items.title,items.id)">查看明细</td>
-          </tr>
-
-          <!--合计-->
-          <tr class="total">
-            <td>合计</td>
-            <td>{{saleCount.room_sum}}</td>
-            <td>{{saleCount.signup_num}}</td>
-            <td>{{saleCount.custom_num}}</td>
-            <td>{{saleCount.contract_num}}</td>
-            <td></td>
-          </tr>
-          </tbody>
-        </table>
-
-        <div class="tz-line-title mt90" v-if="check">
-          <span class="title">{{build_type}}月销售情况</span>
-          <div class="line"></div>
-        </div>
-        <!--<div class="date-box clearfix">
-          <div class="input-group">
-            <input class="input input-date" value="1992-02-07" type="text">
-            <span class="Validform_checktip ml20"></span>
-          </div>
-
-          <div class="input-group">
-            <input class="input input-date" value="1992-02-07" type="text">
-            <span class="Validform_checktip ml20"></span>
-          </div>
-        </div>-->
-        <table class="project-table mt20 mb60" v-if="check">
-          <thead>
-          <tr>
-            <td>日期</td>
-            <td>报名</td>
-            <td>认筹</td>
-            <td>签约</td>
-          </tr>
-          </thead>
-
-          <tbody>
-          <tr v-for="(items,index) in saleList">
-            <td>{{items.year}}年{{items.month}}月</td>
-            <td>{{items.signup_num}}</td>
-            <td>{{items.custom_num}}</td>
-            <td>{{items.contract_num}}</td>
-          </tr>
-          <tr class="total">
-            <td>合  计</td>
-            <td>{{saleCount.signup_num | formatMoney}}</td>
-            <td>{{saleCount.custom_num}}</td>
-            <td>{{saleCount.contract_num}}</td>
-          </tr>
-          </tbody>
-        </table>
+      <div class="user-project-detail">
+        <Sales></Sales>
       </div>
     </div>
 
     <!--财务报表 start-->
     <div class="tab-box" :class="{active:tabIndex==4}">
-     <div class="user-project-detail content">
-       <div class="tz-line-title mt50">
-         <span class="title">财务报表</span>
-         <div class="line"></div>
-       </div>
-       <table class="project-table mt20">
-         <thead>
-         <tr>
-           <td>日期</td>
-           <td>收入（元）</td>
-           <td>支出（元）</td>
-           <td>余额（元）</td>
-           <td></td>
-         </tr>
-         </thead>
+      <div class="user-project-detail">
+        <financial></financial>
+      </div>
+    </div>
 
-         <tbody>
-         <tr v-for="item in countList">
-           <td>{{item.year}}年{{item.month}}月</td>
-           <td>{{item.expenditure | formatMoney}}</td>
-           <td>{{item.income | formatMoney}}</td>
-           <td>{{item.total_amounts | formatMoney}}</td>
-           <router-link tag="td" :to="{name:'UserFinancialDetail',query:{id:id,pid:pid,cid:item.id}}" class="link">查看明细</router-link>
-         </tr>
-
-         <!--合计-->
-         <tr class="total">
-           <td>合计</td>
-           <td>{{saleCounts.sr | formatMoney}}</td>
-           <td>{{saleCounts.zc | formatMoney}}</td>
-           <td>{{saleCounts.ye | formatMoney}}</td>
-           <td></td>
-         </tr>
-         </tbody>
-       </table>
-     </div>
-   </div>
-
-    <!--财务详情-->
   </div>
 </template>
 
 <script>
-  import {mapState} from 'vuex'
-    import { getProjectInfo,getSchedule,getProjectPlan,getProjectPlanList,getFinance} from '@/api/info.js'
+    import {mapState} from 'vuex'
+    import { getProjectInfo,getSchedule} from '@/api/info.js'
     import Swiper from 'swiper'
     import 'swiper/dist/css/swiper.min.css'
+    import Sales from '@/views/user/sales'
+    import financial from '@/views/user/financial'
 
     export default {
       name: "index",
+      components:{
+        Sales,
+        financial
+      },
       data(){
         return {
           IMG_HOST:global.IMG_HOST || '',
@@ -294,25 +189,6 @@
           project_id:this.$route.query.pid,
           scheduleList:[],
           imgStatus:0,
-          // pid: this.$route.query.pid,
-
-          saleCountList: [],
-          saleList: [],
-          saleCount: {
-            room_sum: 0,
-            signup_num: 0,
-            custom_num: 0,
-            contract_num: 0
-          },
-          check: false,
-          build_type: "",
-
-          countList: [],
-          saleCounts: {
-            sr: 0,
-            zc: 0,
-            ye: 0
-          }
         }
       },
       mounted(){
@@ -420,80 +296,6 @@
             });
           }, 100)
         },
-
-        /**
-         * 获取总销售数据
-         * **/
-        async getCount(){
-          var params = {
-            "project_id": this.project_id
-          };
-          let res = await getProjectPlan(params);
-          if (res["code"]) {
-            this.saleCountList = res.ret;
-
-            this.saleCountSUM();
-          }
-        },
-
-        /**
-         * 获取销售列表
-         * @param title
-         * @param id
-         */
-        async showSaleList(title, id) {
-          this.check = true;
-          this.build_type = title;
-
-          var params = {
-            "type_id":this.project_id
-          };
-          let res = await getProjectPlanList(params);
-          if (res["code"]) {
-            this.saleList = res.ret;
-          }
-        },
-
-        /**
-         * 计算总销售数据
-         */
-        saleCountSUM: function () {
-          var that = this;
-          this.saleCountList.find(item=> {
-            that.saleCount.room_sum += item.room_sum;
-            that.saleCount.signup_num += item.signup_num;
-            that.saleCount.custom_num += item.custom_num;
-            that.saleCount.contract_num += item.contract_num;
-          });
-        },
-
-        /**
-         * 获取财务报表
-         * **/
-        async getCount2(){
-          var params = {
-            "project_id": this.project_id
-          };
-          let res = await getFinance(params);
-          if (res["code"]) {
-            this.countList = res.ret;
-
-            this.saleCountSUMs();
-          }
-        },
-
-        /**
-         * 计算总销售数据
-         */
-        saleCountSUMs: function () {
-          var that = this;
-          this.countList.find(item=> {
-            that.saleCount.sr += parseFloat(item.expenditure);
-            that.saleCount.zc += parseFloat(item.income);
-            that.saleCount.ye += parseFloat(item.total_amounts);
-          });
-        },
-
 
       }
     }

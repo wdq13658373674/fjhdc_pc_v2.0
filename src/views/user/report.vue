@@ -17,7 +17,7 @@
       </div>
 
       <!--project-container-->
-      <div  id="project-sales" class="user-project-container mt20">
+      <div class="user-project-detail user-project-container mt20">
         <div class="project-content clearfix">
           <div class="img pull-left"><img :src="IMG_HOST+info.pro.cover" alt=""></div>
 

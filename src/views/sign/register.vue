@@ -5,11 +5,11 @@
 
       <form class="form mt60" action="" id="regForm"  @submit.prevent="submit">
         <div class="input-group">
-          <input class="icon-input phone" type="tel" v-model="inputValue.mobile" v-verify="inputValue.mobile" autocomplete="off"  placeholder="请输入手机号">
+          <input class="icon-input phone" type="tel" @blur="test" v-model="inputValue.mobile" v-verify="inputValue.mobile" autocomplete="off"  placeholder="请输入手机号">
           <!--tips-->
           <div class="tz-err-tips">
             <span class="Validform_checktip wrong" v-remind="inputValue.mobile"></span>
-            <!--<span class="Validform_checktip suc"  v-show="test(inputValue.mobile)"></span>-->
+            <span class="Validform_checktip suc"  v-show=""></span>
           </div>
         </div>
 
@@ -142,6 +142,9 @@
        * **/
       getVerify(code){
         alert('验证码:'+code);
+      },
+      test(){
+
       }
     }
   }

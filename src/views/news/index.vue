@@ -81,7 +81,6 @@
          * 分页
          * */
         pageFn(val){
-          this.page = val;
           this.getNewsList(val);
         }
       }

@@ -2,7 +2,6 @@
   <div>
     <!--banner-->
     <div class="tz-index-banner"></div>
-
     <div class="tz-index-title">
       <div class="bg">
         <span>专注房地产开发管理</span>

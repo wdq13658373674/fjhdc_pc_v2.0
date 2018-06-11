@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <!--header-->
-    <router-view name="headers"></router-view>
+    <router-view name="header"></router-view>
 
     <!--content-->
     <router-view></router-view>
 
     <!--footer-->
-    <router-view name="footers"></router-view>
+    <router-view name="footer"></router-view>
   </div>
 </template>
 

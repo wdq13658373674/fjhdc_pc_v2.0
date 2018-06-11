@@ -63,7 +63,7 @@
   }
 
   .item1{
-    @include wh(auto,991px);
+    @include wh(auto,997px);
     background: url($host+"images/about/about1.jpg") top center no-repeat;
     background-size: auto 100%;
   }

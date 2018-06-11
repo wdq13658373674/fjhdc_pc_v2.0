@@ -54,7 +54,7 @@
 </template>
 
 <script>
-  import {mapMutations} from 'vuex'
+  import {mapState,mapMutations} from 'vuex'
   import { getUserInfo , postUserMessage} from '@/api/info.js'
 
     export default {
@@ -86,6 +86,9 @@
           address:["required"]
         }
       },
+      computed:{
+        ...mapState(['userInfo'])
+      },
       mounted(){
         this.getUserInfo();
       },
@@ -95,7 +98,7 @@
          * **/
         async getUserInfo(){
           var params={
-            "uid":2
+            "uid":this.userInfo
           };
           let res =await getUserInfo(params);
 

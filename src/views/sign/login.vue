@@ -19,9 +19,9 @@
         <input type="submit" class="btn-submit" value="登陆">
 
         <div class="link clearfix">
-          <a class="yellow-light pull-left" href="#">忘记密码 ></a>
+          <a class="yellow-light3 pull-left" href="#">忘记密码 ></a>
 
-          <span class="pull-right yellow">还没有信力达集团账号？ <router-link class="yellow-light" :to="{name:'Register'}">点击注册 ></router-link></span>
+          <span class="pull-right yellow">还没有信力达集团账号？ <router-link class="yellow-light3" :to="{name:'Register'}">点击注册 ></router-link></span>
         </div>
       </form>
     </div>

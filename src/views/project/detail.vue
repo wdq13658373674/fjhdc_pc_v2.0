@@ -75,7 +75,7 @@
 
           <div class="img-box">
             <div style="position: relative;">
-              <!--<img class="img" :src="IMG_HOST+info.support.picture" alt=""/>--><!--大图路径-->
+              <img class="img" :src="IMG_HOST+info.support.picture" alt=""/><!--大图路径-->
 
               <!--hover效果-->
               <a id="map" href="javascript:void(0);" class="dark-mask-box">

@@ -55,6 +55,7 @@
         <tr>
           <td style="width: 502px">名称</td>
           <td>金额（元）</td>
+          <td>总金额</td>
         </tr>
         </thead>
 
@@ -62,11 +63,13 @@
         <tr v-for="item in expenditure">
           <td>{{item.title}}</td>
           <td>{{item.amount | formatMoney}}</td>
+          <td>{{item.count | formatMoney}}</td>
         </tr>
         <!--合计-->
         <tr class="total">
           <td>合计</td>
           <td>{{expenditureCount | formatMoney}}</td>
+          <td></td>
         </tr>
         </tbody>
       </table>
@@ -80,6 +83,7 @@
         <tr>
           <td style="width: 502px">名称</td>
           <td>金额（元）</td>
+          <td>总金额</td>
         </tr>
         </thead>
 
@@ -87,11 +91,13 @@
         <tr v-for="item in income">
           <td>{{item.title}}</td>
           <td>{{item.amount | formatMoney}}</td>
+          <td>{{item.count | formatMoney}}</td>
         </tr>
         <!--合计-->
         <tr class="total">
           <td>合计</td>
           <td>{{incomeCount | formatMoney}}</td>
+          <td></td>
         </tr>
         </tbody>
       </table>

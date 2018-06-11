@@ -156,7 +156,14 @@
 
           if(res){
             this.newsList=res.ret.data.data;
-            this.recommend=res.ret.recommend;
+            if(res.ret.recommend==null || !res.ret.recommend){
+              this.recommend={
+                title:"",
+                content:""
+              };
+            }else{
+              this.recommend=res.ret.recommend;
+            }
           }
         },
       }

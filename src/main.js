@@ -12,7 +12,6 @@ import pagination from 'vue_pagination';
 import verify from "vue-verify-plugin";
 
 import {DatePicker,Select,Option,Message} from 'iview';
-import '@/theme/index.less';
 
 Vue.config.productionTip = false
 

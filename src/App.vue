@@ -27,7 +27,9 @@ export default {
   }
 }
 </script>
-
+<style lang="less">
+  @import 'theme/index.less';
+</style>
 <style lang="scss">
   @import './assets/scss/common';
 </style>

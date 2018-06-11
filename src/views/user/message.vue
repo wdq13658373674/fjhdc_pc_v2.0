@@ -98,7 +98,6 @@
             "uid":2
           };
           let res =await getUserInfo(params);
-          console.log(res);
 
           if(res){
             res.ret.last_login_time == '1970-01-01 08:00:00' ? res.ret.last_login_time=this.$utils.stampToDate(new Date()/1000,true) : res.ret.last_login_time=res.ret.last_login_time;
@@ -112,6 +111,11 @@
           if(this.$verify.check()){
             var params=this.info;
             let res =await postUserMessage(params);
+
+            this.$message.config({
+              top: 500,
+              duration: 3
+            });
 
             if(res.code==0){
               this.$message.warning('你没有修改');

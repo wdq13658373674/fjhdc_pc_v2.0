@@ -35,6 +35,7 @@ Vue.component('DatePicker', DatePicker);
 Vue.component('Select', Select);
 Vue.component('Option', Option);
 Vue.prototype.$message = Message;
+
 /**
  * 全局ajax访问域名
  * **/

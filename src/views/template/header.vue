@@ -47,7 +47,7 @@
 <script>
   import {mapState,mapMutations} from 'vuex'
     export default {
-      name: "header",
+      name: "headers",
       computed:{
         ...mapState(['userInfo'])
       },

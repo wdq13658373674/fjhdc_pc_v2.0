@@ -71,6 +71,15 @@ export async function postLogin(params){
 }
 
 /**
+ * 找回密码
+ * params : 接口接收参数
+ * **/
+export async function postRepassword(params){
+  let res = await axios.post(global.API_HOST+'user_register/findPwd',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
  * 发送验证码
  * params : 接口接收参数
  * **/

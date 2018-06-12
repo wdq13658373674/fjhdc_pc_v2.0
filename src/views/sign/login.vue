@@ -19,7 +19,7 @@
         <input type="submit" class="btn-submit" value="登陆">
 
         <div class="link clearfix">
-          <a class="yellow-light3 pull-left" href="#">忘记密码 ></a>
+          <router-link class="yellow-light3 pull-left" :to="{name:'Repassword'}">忘记密码 ></router-link>
 
           <span class="pull-right yellow">还没有信力达集团账号？ <router-link class="yellow-light3" :to="{name:'Register'}">点击注册 ></router-link></span>
         </div>
@@ -40,7 +40,6 @@
           mobile:'',
           password:''
         },
-        tips:''
       }
     },
     /**

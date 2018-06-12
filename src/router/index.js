@@ -18,6 +18,7 @@ import ProjectDetail from '@/views/project/detail'
 /**登陆注册**/
 import Login from '@/views/sign/login'
 import Register from '@/views/sign/register'
+import Repassword from '@/views/sign/repassword'
 
 /**新闻动态**/
 import News from '@/views/news/index'
@@ -90,6 +91,11 @@ export default new Router({
       component: Register
     },
     {
+      path: '/repassword',
+      name: 'Repassword',
+      component: Repassword
+    },
+    {
       path: '/news/detail',
       name: 'NewsDetail',
       components: {
@@ -109,7 +115,7 @@ export default new Router({
     },
 
     /**
-     *个人中心 layout
+     *个人中心 layout(嵌套路由)
      * */
     {
       path: '/layout',
@@ -143,7 +149,7 @@ export default new Router({
     },
 
     /**
-     *个人中心-参与项目详情 layout
+     *个人中心-参与项目详情 layout(嵌套路由)
      * */
     {
       path: '/report',

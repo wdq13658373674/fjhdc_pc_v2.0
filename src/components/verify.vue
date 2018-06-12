@@ -48,8 +48,8 @@
           /**
            * todo : 后期修改验证码
            * **/
-          var code_num=res.ret.content.slice(21,27);
-          this.$emit('run',code_num);
+          // var code_num=res.ret.content.slice(21,27);
+          this.$emit('run',res.ret.content);
         }
       },
       /**计时开始*/

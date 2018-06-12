@@ -55,7 +55,7 @@
         <tr>
           <td style="width: 502px">名称</td>
           <td>金额（元）</td>
-          <td>总金额</td>
+          <td>累计（元）</td>
         </tr>
         </thead>
 
@@ -83,7 +83,7 @@
         <tr>
           <td style="width: 502px">名称</td>
           <td>金额（元）</td>
-          <td>总金额</td>
+          <td>累计（元）</td>
         </tr>
         </thead>
 

@@ -23,10 +23,14 @@
         <div class="msg pull-left">
           <h1 class="title f20">{{info.title}}</h1>
 
-          <div class="horizontal-line mt50"></div>
+          <div class="horizontal-line" style="margin-top: 14px"></div>
           <ul class="msg-list">
             <li class="item">
-              <span class="tit">地块位置</span>
+              <span class="tit">开发企业</span>
+              <div class="con">{{info.developer}}</div>
+            </li>
+            <li class="item">
+              <span class="tit">项目地址</span>
               <div class="con">{{info.address}}</div>
             </li>
             <li class="item">
@@ -39,7 +43,7 @@
             </li>
             <li class="item">
               <span class="tit">建筑面积</span>
-              <div class="con">{{info.built_area}} <span class="yellow-light">m<sup>2</sup></span></div>
+              <div class="con">约 {{info.built_area}} <span class="yellow-light">m<sup>2</sup></span></div>
             </li>
             <li class="item">
               <span class="tit">容积率</span>
@@ -150,15 +154,31 @@
 
   <!--销售报表-->
   <div class="tab-box" :class="{active:tabIndex==3}">
-    <div class="user-project-detail">
-      <Sales></Sales>
+    <div class="user-project-detail" v-if="this.userInfo">
+      <div v-if="check">
+        <Sales></Sales>
+      </div>
+      <div style="text-align: center; font-size: 18px; padding: 150px" v-else>
+        您还没有参与该项目暂时不能查看销售报表
+      </div>
+    </div>
+    <div class="user-project-detail" style="text-align: center; font-size: 18px; padding: 150px" v-else>
+        请<router-link :to="{name:'Login'}" style="color:#d1a35a; font-weight: bold">登陆</router-link>后查询销售报表
     </div>
   </div>
 
   <!--财务报表 start-->
   <div class="tab-box" :class="{active:tabIndex==4}">
-    <div class="user-project-detail">
-      <financial></financial>
+    <div class="user-project-detail" v-if="this.userInfo">
+      <div v-if="check">
+        <financial></financial>
+      </div>
+      <div style="text-align: center; font-size: 18px; padding: 150px" v-else>
+        您还没有参与该项目暂时不能查看销售报表
+      </div>
+    </div>
+    <div class="user-project-detail" style="text-align: center; font-size: 18px; padding: 150px" v-else>
+      请<router-link :to="{name:'Login'}" style="color:#d1a35a; font-weight: bold">登陆</router-link>后查询销售报表
     </div>
   </div>
 
@@ -167,7 +187,7 @@
 
 <script>
 import {mapState} from 'vuex'
-import { getProjectInfo,getSchedule} from '@/api/info.js'
+import { getProjectInfo,getSchedule,checkProjectUser} from '@/api/info.js'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 import Sales from '@/views/user/sales'
@@ -183,28 +203,25 @@ export default {
     return {
       IMG_HOST:global.IMG_HOST || '',
       info:[],
-      // tabs:['项目介绍','周边配套','建设进度','销售报表','财务报表'],
+      tabs:['项目介绍','周边配套','建设进度','销售报表','财务报表'],
       tabIndex:0,
       schedule:1,
       project_id:this.$route.query.pid,
       scheduleList:[],
       imgStatus:0,
+      check:false,
     }
   },
   mounted(){
     this.getInfo();
     this.setSwiper();
+
+    if(this.userInfo){
+      this.getUserProject();
+    }
   },
   computed:{
     ...mapState(['userInfo']),
-    tabs(){
-      let arr=['项目介绍','周边配套','建设进度'];
-      if(this.userInfo){
-        arr=['项目介绍','周边配套','建设进度','销售报表','财务报表'];
-      }
-
-      return arr;
-    },
   },
   methods:{
     /**
@@ -247,6 +264,23 @@ export default {
         this.scheduleList=res.ret;
 
         this.showImgStatus(0);
+      }
+    },
+
+    /**
+     * 查询当前用户是否参与该项目
+     */
+    async getUserProject(){
+      this.schedule=0;
+
+      var params={
+        "user_id":this.userInfo,
+        "pid":this.project_id,
+      };
+      let res =await checkProjectUser(params);
+
+      if(res["code"]){
+        this.check=true;
       }
     },
 

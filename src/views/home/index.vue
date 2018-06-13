@@ -4,7 +4,7 @@
     <div class="tz-index-banner"></div>
     <div class="tz-index-title">
       <div class="bg">
-        <span>专注房地产项目管理</span>
+        <span>专注房地产投资管理</span>
         <span class="ml30">为客户创造最大利益</span>
       </div>
     </div>

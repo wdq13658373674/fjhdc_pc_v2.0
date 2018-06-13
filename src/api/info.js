@@ -118,6 +118,16 @@ export async function getOneMyProject(params) {
 }
 
 /**
+ * 查询当前用户是否参与该项目
+ * @param params
+ * @returns {*}
+ */
+export async function checkProjectUser(params) {
+  let res = await axios.post(global.API_HOST+'project_user/checkProjectUser',qs.stringify(params));
+  return res.data[0];
+}
+
+/**
  * 个人中心-修改资料
  * @param params
  * @returns {*}

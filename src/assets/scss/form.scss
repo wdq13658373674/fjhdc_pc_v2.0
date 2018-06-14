@@ -1,12 +1,10 @@
 @import "core/import";
 
 .form-wrap{
-  min-width: 1200px;
-  background: url($host+"images/public/reg_bg1.jpg") 0px 0px no-repeat,url($host+"images/public/reg_bg2.jpg") 0 410px no-repeat,url($host+"images/public/reg_bg3.jpg") 0 885px no-repeat;
-  height:1211px;
-  overflow: hidden;
+  height:100%;
+  background: url($host+"images/public/reg_bg.jpg") no-repeat;
+  @include background-size(cover);
 }
-
 .logo{
   display:block;
   text-align: center;
@@ -20,6 +18,12 @@
   margin:67px auto 0;
   padding-bottom:59px;
   overflow: hidden;
+  position: absolute;
+  @include translateY(-50%);
+  top:50%;
+  left:0;
+  right:0;
+  margin:0 auto;
 
   .title{
     text-align: center;

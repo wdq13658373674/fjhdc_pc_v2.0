@@ -16,6 +16,8 @@ html{
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   overflow-y: scroll;
+  height:100%;
+  position: relative;
 }
 
 body{
@@ -25,6 +27,7 @@ body{
   font-weight:300 !important;
   letter-spacing: normal;
   font-family:$baseFontFamily;
+  height:100%;
 }
 
 a {

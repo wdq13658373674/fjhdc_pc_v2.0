@@ -1,6 +1,6 @@
 <template>
   <div class="form-wrap">
-    <div class="form-box" style="margin-top:333px;">
+    <div class="form-box">
       <router-link class="logo mt40" to="/"><img src="@/assets/images/public/logo2.png" alt=""></router-link>
 
       <form class="form mt60" id="logForm" @submit.prevent="submit">

@@ -174,11 +174,11 @@
         <financial></financial>
       </div>
       <div style="text-align: center; font-size: 18px; padding: 150px" v-else>
-        您还没有参与该项目暂时不能查看销售报表
+        您还没有参与该项目暂时不能查看财务报表
       </div>
     </div>
     <div class="user-project-detail" style="text-align: center; font-size: 18px; padding: 150px" v-else>
-      请<router-link :to="{name:'Login'}" style="color:#d1a35a; font-weight: bold">登陆</router-link>后查询销售报表
+      请<router-link :to="{name:'Login'}" style="color:#d1a35a; font-weight: bold">登陆</router-link>后查询财务报表
     </div>
   </div>
 

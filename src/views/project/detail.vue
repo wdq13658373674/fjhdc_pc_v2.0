@@ -39,7 +39,7 @@
             </li>
             <li class="item">
               <span class="tit">地块面积</span>
-              <div class="con">{{info.land_area}} <span class="yellow-light">m<sup>2</sup></span></div>
+              <div class="con">约 {{info.land_area}} <span class="yellow-light">m<sup>2</sup></span></div>
             </li>
             <li class="item">
               <span class="tit">建筑面积</span>

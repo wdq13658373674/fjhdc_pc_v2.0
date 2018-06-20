@@ -19,7 +19,7 @@
         <span>|</span>
         <router-link :to="{name:'ProjectIndex'}">管理项目</router-link>
         <span>|</span>
-        <a href="#">投资项目</a>
+        <a href="http://mt.fjhdc.com/" target="_blank">投资管理</a>
       </div>
     </div>
   </footer>

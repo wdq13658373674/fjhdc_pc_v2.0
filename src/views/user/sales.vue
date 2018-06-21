@@ -73,9 +73,9 @@
       </tr>
       <tr class="total">
         <td>合  计</td>
-        <td>{{saleCount.signup_num | formatMoney}}</td>
-        <td>{{saleCount.custom_num}}</td>
-        <td>{{saleCount.contract_num}}</td>
+        <td>{{saleCount.signup_d}}</td>
+        <td>{{saleCount.custom_d}}</td>
+        <td>{{saleCount.contract_d}}</td>
       </tr>
       </tbody>
     </table>
@@ -96,7 +96,10 @@
           room_sum: 0,
           signup_num: 0,
           custom_num: 0,
-          contract_num: 0
+          contract_num: 0,
+          signup_d: 0,
+          custom_d: 0,
+          contract_d: 0
         },
         check: false,
         build_type: "",
@@ -136,6 +139,8 @@
         let res = await getProjectPlanList(params);
         if (res["code"]) {
           this.saleList = res.ret;
+
+          this.saleSUM();
         }
       },
 
@@ -149,6 +154,22 @@
           that.saleCount.signup_num += item.signup_num;
           that.saleCount.custom_num += item.custom_num;
           that.saleCount.contract_num += item.contract_num;
+        });
+      },
+
+      /**
+       * 单项计算
+       */
+      saleSUM: function () {
+        var that = this;
+        that.saleCount.signup_d = 0;
+        that.saleCount.custom_d = 0;
+        that.saleCount.contract_d = 0;
+
+        this.saleList.find(item=> {
+          that.saleCount.signup_d += item.signup_num;
+          that.saleCount.custom_d += item.custom_num;
+          that.saleCount.contract_d += item.contract_num;
         });
       },
 

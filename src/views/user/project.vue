@@ -22,7 +22,7 @@
           </li>
           <li class="item">
             <div class="tit">容积率</div>
-            <div class="con">{{items.project_ad.stage}}</div>
+            <div class="con">{{items.project_ad.ratio}}</div>
           </li>
           <li class="item">
             <div class="tit">地块面积</div>

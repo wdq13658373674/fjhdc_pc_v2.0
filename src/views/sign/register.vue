@@ -141,7 +141,7 @@
        * 获取验证码
        * **/
       getVerify(code){
-        alert('验证码:'+code);
+        //alert('验证码:'+code);
       },
     }
   }

@@ -27,7 +27,7 @@
           <ul class="msg-list">
             <li class="item">
               <span class="tit">开发企业</span>
-              <div class="con">{{info.developer}}</div>
+              <div class="con">{{info.developer.name}}</div>
             </li>
             <li class="item">
               <span class="tit">项目地址</span>

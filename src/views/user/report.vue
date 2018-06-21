@@ -26,12 +26,16 @@
 
             <ul class="msg-list clearfix">
               <li class="item">
-                <div class="tit">项目总投资（元）</div>
+                <div class="tit">项目预计投资金额（元）</div>
                 <div class="con">{{info.pro.max_amount}}</div>
               </li>
               <li class="item">
-                <div class="tit">您的投资额（元）</div>
+                <div class="tit">您的投资金额（元）</div>
                 <div class="con">{{info.real_amount}}</div>
+              </li>
+              <li class="item">
+                <div class="tit">您的投资占比</div>
+                <div class="con">{{(info.real_amount/info.pro.max_amount)*100 | formatMoney}} %</div>
               </li>
             </ul>
 

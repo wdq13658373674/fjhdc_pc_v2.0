@@ -34,7 +34,7 @@
         <div class="input-group">
           <div class="clearfix">
             <input class="input w189 pull-left" type="text" v-model="inputValue.verification" v-verify="inputValue.verification" autocomplete="off" placeholder="请输入验证码">
-            <verify class="pull-right" second=10 :phone="inputValue.mobile" @run="getVerify"></verify>
+            <verify class="pull-right" second=60 :phone="inputValue.mobile" @run="getVerify"></verify>
           </div>
           <!--tips-->
           <div class="tz-err-tips">

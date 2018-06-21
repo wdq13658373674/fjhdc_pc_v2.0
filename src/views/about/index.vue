@@ -113,7 +113,7 @@
               </li>
               <li>
                 <span class="span1">建筑面积</span>
-                <span class="span2">约65000m<sup>2</sup></span>
+                <span class="span2">约75000m<sup>2</sup></span>
               </li>
               <li>
                 <span class="span1">房源套数</span>
@@ -146,7 +146,7 @@
               </li>
               <li>
                 <span class="span1">建筑面积</span>
-                <span class="span2">约100000m<sup>2</sup></span>
+                <span class="span2">约110000m<sup>2</sup></span>
               </li>
               <li>
                 <span class="span1">房源套数</span>
@@ -179,7 +179,7 @@
               </li>
               <li>
                 <span class="span1">建筑面积</span>
-                <span class="span2">约260000m<sup>2</sup></span>
+                <span class="span2">约250000m<sup>2</sup></span>
               </li>
               <li>
                 <span class="span1">房源套数</span>
@@ -212,7 +212,7 @@
               </li>
               <li>
                 <span class="span1">建筑面积</span>
-                <span class="span2">约163000m<sup>2</sup></span>
+                <span class="span2">约176000m<sup>2</sup></span>
               </li>
               <li>
                 <span class="span1">房源套数</span>
@@ -245,7 +245,7 @@
               </li>
               <li>
                 <span class="span1">建筑面积</span>
-                <span class="span2">约131475m<sup>2</sup></span>
+                <span class="span2">约125000m<sup>2</sup></span>
               </li>
               <li>
                 <span class="span1">房源套数</span>

@@ -233,7 +233,7 @@
       <div class="item item14">
         <div class="content">
           <div class="project-con pull-left">
-            <h1>云鼎府邸</h1>
+            <h1>诚远御府</h1>
             <ul class="pro-list">
               <li>
                 <span class="span1">项目地址</span>

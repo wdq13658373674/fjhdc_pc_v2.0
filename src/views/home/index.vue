@@ -8,6 +8,7 @@
         <span class="ml30">为客户创造最大利益</span>
       </div>
     </div>
+
     <div class="tz-index-teams">
       <ul class="teams-list clearfix">
         <li class="item">
@@ -67,9 +68,7 @@
         }}" v-for="(items,index) in projectList" :key="index">
           <div class="img-box" :style="{backgroundImage:'url('+ IMG_HOST+items.cover +')'}">
             <div class="mask">
-              <div class="mask">
-                <span class="arc"></span>
-              </div>
+              <span class="arc"></span>
             </div>
           </div>
           <div class="con-box">
